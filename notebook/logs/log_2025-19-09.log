@@ -1,0 +1,5 @@
+2025-09-19 17:12:34,864 - INFO - DataProcessor initializing started
+2025-09-19 17:12:34,865 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:12:34,865 - INFO - Data loading started
+2025-09-19 17:12:34,865 - ERROR - Error in loading data: [Errno 2] No such file or directory: 'artifacts/raw/animelist_filterred.csv'
+2025-09-19 17:12:34,865 - ERROR - Error in processing data : Error in /var/folders/14/2tk8fp_d2px7dny757m_wgth0000gn/T/ipykernel_84357/1276479729.py, line 45 : Error in loading data

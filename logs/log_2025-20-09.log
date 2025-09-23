@@ -1,0 +1,199 @@
+2025-09-20 16:13:05,009 - INFO - Successfully read the YAML file :D
+2025-09-20 16:13:05,009 - INFO - ModelTrain class initialized
+2025-09-20 16:13:05,172 - INFO - Data loaded and splitted successfully
+2025-09-20 16:13:05,173 - INFO - Successfully read the YAML file :D
+2025-09-20 16:13:05,173 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:13:05,173 - INFO - Initializing model started
+2025-09-20 16:13:05,210 - INFO - Model initialized successfully
+2025-09-20 16:13:05,210 - INFO - Could not find checkpoint
+2025-09-20 16:16:51,529 - INFO - Successfully read the YAML file :D
+2025-09-20 16:16:51,530 - INFO - ModelTrain class initialized
+2025-09-20 16:16:51,655 - INFO - Data loaded and splitted successfully
+2025-09-20 16:16:51,656 - INFO - Successfully read the YAML file :D
+2025-09-20 16:16:51,656 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:16:51,656 - INFO - Initializing model started
+2025-09-20 16:16:51,692 - INFO - Model initialized successfully
+2025-09-20 16:16:51,692 - INFO - Could not find checkpoint
+2025-09-20 16:21:57,559 - INFO - Successfully read the YAML file :D
+2025-09-20 16:21:57,559 - INFO - ModelTrain class initialized
+2025-09-20 16:21:57,690 - INFO - Data loaded and splitted successfully
+2025-09-20 16:21:57,691 - INFO - Successfully read the YAML file :D
+2025-09-20 16:21:57,691 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:21:57,691 - INFO - Initializing model started
+2025-09-20 16:21:57,727 - INFO - Model initialized successfully
+2025-09-20 16:21:57,727 - INFO - Could not find checkpoint
+2025-09-20 16:22:39,649 - INFO - Successfully read the YAML file :D
+2025-09-20 16:22:39,649 - INFO - ModelTrain class initialized
+2025-09-20 16:22:39,774 - INFO - Data loaded and splitted successfully
+2025-09-20 16:22:39,775 - INFO - Successfully read the YAML file :D
+2025-09-20 16:22:39,775 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:22:39,776 - INFO - Initializing model started
+2025-09-20 16:22:39,813 - INFO - Model initialized successfully
+2025-09-20 16:22:39,813 - INFO - Could not find checkpoint
+2025-09-20 16:23:13,436 - INFO - Successfully read the YAML file :D
+2025-09-20 16:23:13,437 - INFO - ModelTrain class initialized
+2025-09-20 16:23:13,573 - INFO - Data loaded and splitted successfully
+2025-09-20 16:23:13,574 - INFO - Successfully read the YAML file :D
+2025-09-20 16:23:13,574 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:23:13,574 - INFO - Initializing model started
+2025-09-20 16:23:13,610 - INFO - Model initialized successfully
+2025-09-20 16:23:13,610 - INFO - Could not find checkpoint
+2025-09-20 16:23:53,179 - INFO - Successfully read the YAML file :D
+2025-09-20 16:23:53,179 - INFO - ModelTrain class initialized
+2025-09-20 16:23:53,298 - INFO - Data loaded and splitted successfully
+2025-09-20 16:23:53,299 - INFO - Successfully read the YAML file :D
+2025-09-20 16:23:53,299 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:23:53,299 - INFO - Initializing model started
+2025-09-20 16:23:53,335 - INFO - Model initialized successfully
+2025-09-20 16:23:53,335 - INFO - Could not find checkpoint
+2025-09-20 16:24:32,556 - INFO - Successfully read the YAML file :D
+2025-09-20 16:24:32,556 - INFO - ModelTrain class initialized
+2025-09-20 16:24:32,708 - INFO - Data loaded and splitted successfully
+2025-09-20 16:24:32,709 - INFO - Successfully read the YAML file :D
+2025-09-20 16:24:32,709 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:24:32,709 - INFO - Initializing model started
+2025-09-20 16:24:32,758 - INFO - Model initialized successfully
+2025-09-20 16:24:32,758 - INFO - Could not find checkpoint
+2025-09-20 16:29:05,897 - INFO - Successfully read the YAML file :D
+2025-09-20 16:29:05,897 - INFO - ModelTrain class initialized
+2025-09-20 16:29:06,044 - INFO - Data loaded and splitted successfully
+2025-09-20 16:29:06,045 - INFO - Successfully read the YAML file :D
+2025-09-20 16:29:06,045 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:29:06,045 - INFO - Initializing model started
+2025-09-20 16:29:06,084 - INFO - Model initialized successfully
+2025-09-20 16:29:06,085 - INFO - Could not find checkpoint
+2025-09-20 16:29:30,653 - INFO - Successfully read the YAML file :D
+2025-09-20 16:29:30,653 - INFO - ModelTrain class initialized
+2025-09-20 16:29:30,768 - INFO - Data loaded and splitted successfully
+2025-09-20 16:29:30,769 - INFO - Successfully read the YAML file :D
+2025-09-20 16:29:30,769 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:29:30,769 - INFO - Initializing model started
+2025-09-20 16:29:30,806 - INFO - Model initialized successfully
+2025-09-20 16:29:30,807 - INFO - Could not find checkpoint
+2025-09-20 16:29:58,111 - INFO - Successfully read the YAML file :D
+2025-09-20 16:29:58,111 - INFO - ModelTrain class initialized
+2025-09-20 16:29:58,226 - ERROR - Error in Loading and splitting X-y data  :object of type 'numpy.float64' has no len()
+2025-09-20 16:30:34,351 - INFO - Successfully read the YAML file :D
+2025-09-20 16:30:34,351 - INFO - ModelTrain class initialized
+2025-09-20 16:30:34,443 - ERROR - Error in Loading and splitting X-y data  :list indices must be integers or slices, not tuple
+2025-09-20 16:31:03,889 - INFO - Successfully read the YAML file :D
+2025-09-20 16:31:03,889 - INFO - ModelTrain class initialized
+2025-09-20 16:31:03,982 - ERROR - Error in Loading and splitting X-y data  :object of type 'numpy.float64' has no len()
+2025-09-20 16:31:21,056 - INFO - Successfully read the YAML file :D
+2025-09-20 16:31:21,056 - INFO - ModelTrain class initialized
+2025-09-20 16:31:21,148 - ERROR - Error in Loading and splitting X-y data  :list index out of range
+2025-09-20 16:31:42,522 - INFO - Successfully read the YAML file :D
+2025-09-20 16:31:42,522 - INFO - ModelTrain class initialized
+2025-09-20 16:31:42,616 - ERROR - Error in Loading and splitting X-y data  :'ModelTrain' object has no attribute 'train_array'
+2025-09-20 16:32:07,851 - INFO - Successfully read the YAML file :D
+2025-09-20 16:32:07,851 - INFO - ModelTrain class initialized
+2025-09-20 16:32:07,952 - INFO - Data loaded and splitted successfully
+2025-09-20 16:32:07,953 - INFO - Successfully read the YAML file :D
+2025-09-20 16:32:07,953 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:32:07,953 - INFO - Initializing model started
+2025-09-20 16:32:07,990 - INFO - Model initialized successfully
+2025-09-20 16:32:07,990 - INFO - Could not find checkpoint
+2025-09-20 16:40:30,871 - INFO - Successfully read the YAML file :D
+2025-09-20 16:40:30,871 - INFO - ModelTrain class initialized
+2025-09-20 16:40:30,973 - INFO - Data loaded and splitted successfully
+2025-09-20 16:40:30,974 - INFO - Successfully read the YAML file :D
+2025-09-20 16:40:30,974 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:40:30,974 - INFO - Initializing model started
+2025-09-20 16:40:31,011 - INFO - Model initialized successfully
+2025-09-20 16:40:31,011 - INFO - Could not find checkpoint
+2025-09-20 16:41:29,829 - INFO - Successfully read the YAML file :D
+2025-09-20 16:41:29,829 - INFO - ModelTrain class initialized
+2025-09-20 16:41:29,921 - ERROR - Error in Loading and splitting X-y data  :object of type 'numpy.float64' has no len()
+2025-09-20 16:42:07,739 - INFO - Successfully read the YAML file :D
+2025-09-20 16:42:07,739 - INFO - ModelTrain class initialized
+2025-09-20 16:42:07,840 - INFO - Successfully read the YAML file :D
+2025-09-20 16:42:07,841 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:42:07,841 - INFO - Initializing model started
+2025-09-20 16:42:07,879 - INFO - Model initialized successfully
+2025-09-20 16:42:07,879 - INFO - Could not find checkpoint
+2025-09-20 16:42:21,513 - INFO - Successfully read the YAML file :D
+2025-09-20 16:42:21,514 - INFO - ModelTrain class initialized
+2025-09-20 16:42:21,607 - INFO - Successfully read the YAML file :D
+2025-09-20 16:42:21,607 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:42:21,607 - INFO - Initializing model started
+2025-09-20 16:42:21,645 - INFO - Model initialized successfully
+2025-09-20 16:42:21,645 - INFO - Could not find checkpoint
+2025-09-20 16:43:10,680 - INFO - Successfully read the YAML file :D
+2025-09-20 16:43:10,681 - INFO - ModelTrain class initialized
+2025-09-20 16:43:10,773 - INFO - Data loaded and splitted successfully
+2025-09-20 16:43:10,774 - INFO - Successfully read the YAML file :D
+2025-09-20 16:43:10,774 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:43:10,774 - INFO - Initializing model started
+2025-09-20 16:43:10,809 - INFO - Model initialized successfully
+2025-09-20 16:43:10,809 - INFO - Could not find checkpoint
+2025-09-20 16:43:39,487 - INFO - Successfully read the YAML file :D
+2025-09-20 16:43:39,488 - INFO - ModelTrain class initialized
+2025-09-20 16:43:39,580 - INFO - Data loaded and splitted successfully
+2025-09-20 16:43:39,581 - INFO - Successfully read the YAML file :D
+2025-09-20 16:43:39,581 - INFO - Loaded configuration from config.yaml
+2025-09-20 16:43:39,581 - INFO - Initializing model started
+2025-09-20 16:43:39,617 - INFO - Model initialized successfully
+2025-09-20 16:43:39,617 - INFO - Could not find checkpoint
+2025-09-20 18:19:36,066 - INFO - Successfully read the YAML file :D
+2025-09-20 18:19:36,066 - INFO - ModelTrain class initialized
+2025-09-20 18:19:36,170 - INFO - Data loaded and splitted successfully
+2025-09-20 18:19:36,171 - INFO - Successfully read the YAML file :D
+2025-09-20 18:19:36,171 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:19:36,171 - INFO - Initializing model started
+2025-09-20 18:19:36,209 - INFO - Model initialized successfully
+2025-09-20 18:19:36,228 - INFO - Model loaded succesfully
+2025-09-20 18:21:14,718 - INFO - Successfully read the YAML file :D
+2025-09-20 18:21:14,718 - INFO - ModelTrain class initialized
+2025-09-20 18:21:14,839 - INFO - Data loaded and splitted successfully
+2025-09-20 18:21:14,839 - INFO - Successfully read the YAML file :D
+2025-09-20 18:21:14,840 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:21:14,840 - INFO - Initializing model started
+2025-09-20 18:21:14,876 - INFO - Model initialized successfully
+2025-09-20 18:21:14,894 - INFO - Model loaded succesfully
+2025-09-20 18:21:42,620 - INFO - Successfully read the YAML file :D
+2025-09-20 18:21:42,620 - INFO - ModelTrain class initialized
+2025-09-20 18:21:42,712 - INFO - Data loaded and splitted successfully
+2025-09-20 18:21:42,712 - INFO - Successfully read the YAML file :D
+2025-09-20 18:21:42,713 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:21:42,713 - INFO - Initializing model started
+2025-09-20 18:21:42,749 - INFO - Model initialized successfully
+2025-09-20 18:21:42,763 - INFO - Model loaded succesfully
+2025-09-20 18:22:31,949 - INFO - Successfully read the YAML file :D
+2025-09-20 18:22:31,949 - INFO - ModelTrain class initialized
+2025-09-20 18:22:32,059 - INFO - Data loaded and splitted successfully
+2025-09-20 18:22:32,060 - INFO - Successfully read the YAML file :D
+2025-09-20 18:22:32,060 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:22:32,060 - INFO - Initializing model started
+2025-09-20 18:22:32,094 - INFO - Model initialized successfully
+2025-09-20 18:22:32,094 - INFO - Could not find checkpoint
+2025-09-20 18:22:38,139 - INFO - Successfully read the YAML file :D
+2025-09-20 18:22:38,140 - INFO - ModelTrain class initialized
+2025-09-20 18:22:38,233 - INFO - Data loaded and splitted successfully
+2025-09-20 18:22:38,234 - INFO - Successfully read the YAML file :D
+2025-09-20 18:22:38,234 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:22:38,234 - INFO - Initializing model started
+2025-09-20 18:22:38,271 - INFO - Model initialized successfully
+2025-09-20 18:22:38,271 - INFO - Could not find checkpoint
+2025-09-20 18:33:10,439 - INFO - Successfully read the YAML file :D
+2025-09-20 18:33:10,439 - INFO - ModelTrain class initialized
+2025-09-20 18:33:10,541 - INFO - Data loaded and splitted successfully
+2025-09-20 18:33:10,542 - INFO - Successfully read the YAML file :D
+2025-09-20 18:33:10,542 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:33:10,542 - INFO - Initializing model started
+2025-09-20 18:33:10,578 - INFO - Model initialized successfully
+2025-09-20 18:45:28,978 - INFO - Successfully read the YAML file :D
+2025-09-20 18:45:28,978 - INFO - ModelTrain class initialized
+2025-09-20 18:45:29,078 - INFO - Data loaded and splitted successfully
+2025-09-20 18:45:29,079 - INFO - Successfully read the YAML file :D
+2025-09-20 18:45:29,079 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:45:29,079 - INFO - Initializing model started
+2025-09-20 18:45:29,114 - INFO - Model initialized successfully
+2025-09-20 18:45:29,131 - INFO - Model loaded succesfully
+2025-09-20 18:47:47,715 - INFO - Successfully read the YAML file :D
+2025-09-20 18:47:47,716 - INFO - ModelTrain class initialized
+2025-09-20 18:47:47,809 - INFO - Data loaded and splitted successfully
+2025-09-20 18:47:47,810 - INFO - Successfully read the YAML file :D
+2025-09-20 18:47:47,810 - INFO - Loaded configuration from config.yaml
+2025-09-20 18:47:47,810 - INFO - Initializing model started
+2025-09-20 18:47:47,846 - INFO - Model initialized successfully
+2025-09-20 18:47:47,860 - INFO - Model loaded succesfully

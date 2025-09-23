@@ -1,0 +1,20 @@
+data_ingestion:
+  bucket_name: "mlops-project-2-nima"
+  bucket_file_names:
+    - 'anime.csv'
+    - 'anime_with_synopsis.csv'
+    - 'animelist.csv'
+  row_limit : 500
+  threshold : 10
+
+model_training:
+  embedding_size: 32
+  loss: binary_crossentropy
+  learning_rate: 0.001
+  metrics: ['mse','mae']
+  batch_size : 1024
+  patience : 3
+  verbose : 1
+  force_training : True
+  epochs : 10
+

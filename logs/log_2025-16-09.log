@@ -1,0 +1,146 @@
+2025-09-16 22:36:23,364 - INFO - Successfully read the YAML file :D
+ 2025-09-16 22:36:57,343 - INFO - Successfully read the YAML file :D
+2025-09-16 22:36:57,343 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:36:57,343 - INFO - Started data ingestion data process
+2025-09-16 22:36:59,286 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:36:59,286 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 35 : Failed to download csv file 
+2025-09-16 22:36:59,286 - INFO - Data ingestion completed!
+2025-09-16 22:38:34,404 - INFO - Successfully read the YAML file :D
+2025-09-16 22:38:34,404 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:38:34,404 - INFO - Started data ingestion data process
+2025-09-16 22:38:35,194 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:38:35,194 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 35 : Failed to download csv file 
+2025-09-16 22:38:35,194 - INFO - Data ingestion completed!
+2025-09-16 22:39:52,968 - INFO - Successfully read the YAML file :D
+2025-09-16 22:39:52,968 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:39:52,968 - INFO - Started data ingestion data process
+2025-09-16 22:39:53,775 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:39:53,775 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 37 : Failed to download csv file 
+2025-09-16 22:39:53,775 - INFO - Data ingestion completed!
+2025-09-16 22:40:26,222 - INFO - Successfully read the YAML file :D
+2025-09-16 22:40:26,222 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:40:26,222 - INFO - Started data ingestion data process
+2025-09-16 22:40:27,116 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:40:27,117 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 37 : Failed to download csv file 
+2025-09-16 22:40:27,117 - INFO - Data ingestion completed!
+2025-09-16 22:40:52,390 - INFO - Successfully read the YAML file :D
+2025-09-16 22:40:52,390 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:40:52,391 - INFO - Started data ingestion data process
+2025-09-16 22:40:52,391 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:40:52,391 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 24 : Failed to download csv file 
+2025-09-16 22:40:52,391 - INFO - Data ingestion completed!
+2025-09-16 22:41:23,801 - INFO - Successfully read the YAML file :D
+2025-09-16 22:41:23,801 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:41:23,801 - INFO - Started data ingestion data process
+2025-09-16 22:41:23,801 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:41:23,801 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 24 : Failed to download csv file 
+2025-09-16 22:41:23,801 - INFO - Data ingestion completed!
+2025-09-16 22:42:06,548 - INFO - Successfully read the YAML file :D
+2025-09-16 22:42:06,548 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:42:06,548 - INFO - Started data ingestion data process
+2025-09-16 22:42:06,548 - INFO - Data ingestion completed!
+2025-09-16 22:42:22,454 - INFO - Successfully read the YAML file :D
+2025-09-16 22:42:22,454 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:42:22,454 - INFO - Started data ingestion data process
+2025-09-16 22:42:23,310 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:42:23,310 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 39 : Failed to download csv file 
+2025-09-16 22:42:23,310 - INFO - Data ingestion completed!
+2025-09-16 22:42:54,308 - INFO - Successfully read the YAML file :D
+2025-09-16 22:42:54,309 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:42:54,309 - INFO - Started data ingestion data process
+2025-09-16 22:42:54,309 - INFO - start 
+2025-09-16 22:42:55,161 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:42:55,161 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 39 : Failed to download csv file 
+2025-09-16 22:42:55,161 - INFO - Data ingestion completed!
+2025-09-16 22:43:07,829 - INFO - Successfully read the YAML file :D
+2025-09-16 22:43:07,829 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:43:07,829 - INFO - Started data ingestion data process
+2025-09-16 22:43:07,829 - INFO -  ------ start --------
+2025-09-16 22:43:08,743 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:43:08,744 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 39 : Failed to download csv file 
+2025-09-16 22:43:08,744 - INFO - Data ingestion completed!
+2025-09-16 22:43:16,676 - INFO - Successfully read the YAML file :D
+2025-09-16 22:43:16,676 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:43:16,676 - INFO - Started data ingestion data process
+2025-09-16 22:43:17,529 - INFO -  ------ start --------
+2025-09-16 22:43:17,529 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:43:17,529 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 39 : Failed to download csv file 
+2025-09-16 22:43:17,529 - INFO - Data ingestion completed!
+2025-09-16 22:43:27,753 - INFO - Successfully read the YAML file :D
+2025-09-16 22:43:27,753 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:43:27,753 - INFO - Started data ingestion data process
+2025-09-16 22:43:28,524 - INFO -  ------ start -------- <google.cloud.storage.client.Client object at 0x10be23620>
+2025-09-16 22:43:28,524 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:43:28,524 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 39 : Failed to download csv file 
+2025-09-16 22:43:28,524 - INFO - Data ingestion completed!
+2025-09-16 22:43:41,336 - INFO - Successfully read the YAML file :D
+2025-09-16 22:43:41,336 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:43:41,336 - INFO - Started data ingestion data process
+2025-09-16 22:43:42,158 - INFO -  ------ start -------- <google.cloud.storage.client.Client object at 0x10db9b620>
+2025-09-16 22:43:42,158 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:43:42,158 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 40 : Failed to download csv file 
+2025-09-16 22:43:42,158 - INFO - Data ingestion completed!
+2025-09-16 22:44:01,514 - INFO - Successfully read the YAML file :D
+2025-09-16 22:44:01,514 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:44:01,514 - INFO - Started data ingestion data process
+2025-09-16 22:44:02,310 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:44:02,310 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 40 : Failed to download csv file 
+2025-09-16 22:44:02,310 - INFO - Data ingestion completed!
+2025-09-16 22:45:07,483 - INFO - Successfully read the YAML file :D
+2025-09-16 22:45:07,483 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:45:07,483 - INFO - Started data ingestion data process
+2025-09-16 22:45:08,256 - INFO -  ------ start -------- <google.cloud.storage.client.Client object at 0x10b7b7620>
+2025-09-16 22:45:08,256 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:45:08,256 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 40 : Failed to download csv file 
+2025-09-16 22:45:08,256 - INFO - Data ingestion completed!
+2025-09-16 22:45:17,587 - INFO - Successfully read the YAML file :D
+2025-09-16 22:45:17,587 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:45:17,587 - INFO - Started data ingestion data process
+2025-09-16 22:45:18,435 - INFO -  ------ start -------- <google.cloud.storage.client.Client object at 0x10bb7f620>
+2025-09-16 22:45:18,435 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:45:18,435 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 40 : Failed to download csv file 
+2025-09-16 22:45:18,435 - INFO - Data ingestion completed!
+2025-09-16 22:45:43,694 - INFO - Successfully read the YAML file :D
+2025-09-16 22:45:43,694 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:45:43,694 - INFO - Started data ingestion data process
+2025-09-16 22:45:44,533 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:45:44,533 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 39 : Failed to download csv file 
+2025-09-16 22:45:44,533 - INFO - Data ingestion completed!
+2025-09-16 22:45:56,094 - INFO - Successfully read the YAML file :D
+2025-09-16 22:45:56,094 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:45:56,094 - INFO - Started data ingestion data process
+2025-09-16 22:45:56,958 - INFO -  ------ start -------- <google.cloud.storage.client.Client object at 0x10e203620>
+2025-09-16 22:45:56,959 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:45:56,959 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 40 : Failed to download csv file 
+2025-09-16 22:45:56,959 - INFO - Data ingestion completed!
+2025-09-16 22:46:09,788 - INFO - Successfully read the YAML file :D
+2025-09-16 22:46:09,789 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:46:09,789 - INFO - Started data ingestion data process
+2025-09-16 22:46:10,661 - INFO -  ------ start -------- <google.cloud.storage.client.Client object at 0x10d8bb620>
+2025-09-16 22:46:10,661 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:46:10,662 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 41 : Failed to download csv file 
+2025-09-16 22:46:10,662 - INFO - Data ingestion completed!
+2025-09-16 22:46:53,924 - INFO - Successfully read the YAML file :D
+2025-09-16 22:46:53,924 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:46:53,924 - INFO - Started data ingestion data process
+2025-09-16 22:46:54,804 - INFO -  ------ start -------- <google.cloud.storage.client.Client object at 0x10dba3620>
+2025-09-16 22:46:54,804 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:46:54,804 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 41 : Failed to download csv file 
+2025-09-16 22:46:54,804 - INFO - Data ingestion completed!
+2025-09-16 22:47:19,380 - INFO - Successfully read the YAML file :D
+2025-09-16 22:47:19,380 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:47:19,380 - INFO - Started data ingestion data process
+2025-09-16 22:47:20,277 - INFO -  ------ start -------- artifacts/raw/anime.csv
+2025-09-16 22:47:20,277 - ERROR - Error while downloading CSV file :(
+2025-09-16 22:47:20,277 - ERROR - Custom exception:Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_ingestion.py, line 41 : Failed to download csv file 
+2025-09-16 22:47:20,277 - INFO - Data ingestion completed!
+2025-09-16 22:48:21,206 - INFO - Successfully read the YAML file :D
+2025-09-16 22:48:21,206 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-16 22:48:21,206 - INFO - Started data ingestion data process
+2025-09-16 22:48:22,062 - INFO -  ------ start -------- artifacts/raw/anime.csv
+2025-09-16 22:48:25,995 - INFO -  ------ start -------- artifacts/raw/anime_with_synopsis.csv
+2025-09-16 22:48:29,320 - INFO -  ------ start -------- artifacts/raw/animelist.csv
+2025-09-16 23:17:53,045 - INFO - Large file detected, Only downloaded 10000000 rows
+2025-09-16 23:17:53,046 - INFO - CSV file successfully downloaded to artifacts/raw :)
+2025-09-16 23:17:53,046 - INFO - Data ingestion done successfully :)
+2025-09-16 23:17:53,046 - INFO - Data ingestion completed!

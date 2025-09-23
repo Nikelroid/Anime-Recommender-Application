@@ -1,0 +1,475 @@
+2025-09-19 16:54:15,014 - INFO - Data processing started
+2025-09-19 16:54:29,258 - INFO - Data loaded successfully
+2025-09-19 16:54:33,843 - INFO - Data processing started
+2025-09-19 16:54:39,251 - INFO - Data processing started
+2025-09-19 16:54:50,812 - INFO - Data loaded successfully
+2025-09-19 16:55:20,161 - INFO - Data scaled successfully
+2025-09-19 16:59:38,955 - INFO - DataProcessor initializing started
+2025-09-19 16:59:38,955 - INFO - DataProcessor initialized succesfulle
+2025-09-19 16:59:38,955 - INFO - Data loading started
+2025-09-19 16:59:50,825 - INFO - Data loaded successfully
+2025-09-19 16:59:50,825 - INFO - Data scaling started
+2025-09-19 17:00:20,203 - INFO - Data scaled successfully
+2025-09-19 17:02:51,598 - INFO - DataProcessor initializing started
+2025-09-19 17:02:51,598 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:02:51,598 - INFO - Data loading started
+2025-09-19 17:03:03,290 - INFO - Data loaded successfully
+2025-09-19 17:03:03,291 - INFO - Data scaling started
+2025-09-19 17:03:32,384 - INFO - Data scaled successfully
+2025-09-19 17:03:32,384 - ERROR - Error in processing data : DataProcrssor.create_encoder_decoder() missing 1 required positional argument: 'key'
+2025-09-19 17:04:45,724 - INFO - DataProcessor initializing started
+2025-09-19 17:04:45,724 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:04:45,724 - INFO - Data loading started
+2025-09-19 17:04:57,414 - INFO - Data loaded successfully
+2025-09-19 17:04:57,415 - INFO - Data scaling started
+2025-09-19 17:05:26,690 - INFO - Data scaled successfully
+2025-09-19 17:05:26,690 - ERROR - Error in creating encoder-encoder for : user_id  : cannot access local variable 'e' where it is not associated with a value
+2025-09-19 17:05:26,690 - ERROR - Error in creating encoder-encoder dictionaries: Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 65 : Error in creating encoder-encoder for : user_id | 
+2025-09-19 17:05:26,690 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 79 : Error in creating encoder-encoder dictionaries
+2025-09-19 17:07:00,339 - INFO - DataProcessor initializing started
+2025-09-19 17:07:00,339 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:07:00,339 - INFO - Data loading started
+2025-09-19 17:07:11,755 - INFO - Data loaded successfully
+2025-09-19 17:07:11,756 - INFO - Data scaling started
+2025-09-19 17:07:40,830 - INFO - Data scaled successfully
+2025-09-19 17:07:40,831 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:07:41,691 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:07:41,719 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:07:42,737 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:07:42,761 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:07:42,761 - INFO - User count -> 325770   |   Anime count -> 17562 
+2025-09-19 17:07:42,761 - INFO - Data splitting started
+2025-09-19 17:08:08,976 - INFO - Data splitted successfully
+2025-09-19 17:08:08,976 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:08:09,209 - ERROR - Error in loading or/and mergin anime_list data : 'anime_id'
+2025-09-19 17:08:09,209 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 117 : Error in loading or/and mergin anime_list data  
+2025-09-19 17:09:28,418 - INFO - DataProcessor initializing started
+2025-09-19 17:09:28,418 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:09:28,418 - INFO - Data loading started
+2025-09-19 17:09:39,467 - INFO - Data loaded successfully
+2025-09-19 17:09:39,467 - INFO - Data scaling started
+2025-09-19 17:10:06,225 - INFO - Data scaled successfully
+2025-09-19 17:10:06,225 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:10:07,040 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:10:07,075 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:10:08,034 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:10:08,071 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:10:08,071 - INFO - User count -> 325770   |   Anime count -> 17562 
+2025-09-19 17:10:08,071 - INFO - Data splitting started
+2025-09-19 17:10:33,328 - INFO - Data splitted successfully
+2025-09-19 17:10:33,329 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:10:33,332 - ERROR - Error in loading or/and mergin anime_list data : [Errno 2] No such file or directory: 'artifacts/raw/anime_filterred.csv'
+2025-09-19 17:10:33,333 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 115 : Error in loading or/and mergin anime_list data  
+2025-09-19 17:10:37,865 - INFO - DataProcessor initializing started
+2025-09-19 17:10:37,865 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:10:37,865 - INFO - Data loading started
+2025-09-19 17:10:38,525 - INFO - Data loaded successfully
+2025-09-19 17:10:38,525 - INFO - Data scaling started
+2025-09-19 17:10:40,051 - INFO - Data scaled successfully
+2025-09-19 17:10:40,051 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:10:40,091 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:10:40,093 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:10:40,157 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:10:40,160 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:10:40,160 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:10:40,160 - INFO - Data splitting started
+2025-09-19 17:10:41,010 - INFO - Data splitted successfully
+2025-09-19 17:10:41,010 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:10:41,214 - ERROR - Error in loading or/and mergin anime_list data : 'anime_id'
+2025-09-19 17:10:41,214 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 117 : Error in loading or/and mergin anime_list data  
+2025-09-19 17:15:48,613 - INFO - DataProcessor initializing started
+2025-09-19 17:15:48,613 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:15:48,613 - INFO - Data loading started
+2025-09-19 17:15:49,267 - INFO - Data loaded successfully
+2025-09-19 17:15:49,267 - INFO - Data scaling started
+2025-09-19 17:15:50,824 - INFO - Data scaled successfully
+2025-09-19 17:15:50,824 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:15:50,865 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:15:50,868 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:15:50,949 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:15:50,953 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:15:50,953 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:15:50,953 - INFO - Data splitting started
+2025-09-19 17:15:51,772 - INFO - Data splitted successfully
+2025-09-19 17:15:51,772 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:18:09,529 - INFO - DataProcessor initializing started
+2025-09-19 17:18:09,529 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:18:09,529 - INFO - Data loading started
+2025-09-19 17:18:10,183 - INFO - Data loaded successfully
+2025-09-19 17:18:10,183 - INFO - Data scaling started
+2025-09-19 17:18:11,712 - INFO - Data scaled successfully
+2025-09-19 17:18:11,712 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:18:11,754 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:18:11,756 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:18:11,820 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:18:11,822 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:18:11,822 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:18:11,822 - INFO - Data splitting started
+2025-09-19 17:18:12,617 - INFO - Data splitted successfully
+2025-09-19 17:18:12,617 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:18:38,859 - INFO - DataProcessor initializing started
+2025-09-19 17:18:38,859 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:18:38,859 - INFO - Data loading started
+2025-09-19 17:18:39,532 - INFO - Data loaded successfully
+2025-09-19 17:18:39,532 - INFO - Data scaling started
+2025-09-19 17:18:41,084 - INFO - Data scaled successfully
+2025-09-19 17:18:41,084 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:18:41,124 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:18:41,126 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:18:41,190 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:18:41,193 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:18:41,193 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:18:41,193 - INFO - Data splitting started
+2025-09-19 17:18:41,999 - INFO - Data splitted successfully
+2025-09-19 17:18:42,000 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:18:49,203 - INFO - DataProcessor initializing started
+2025-09-19 17:18:49,203 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:18:49,203 - INFO - Data loading started
+2025-09-19 17:18:49,871 - INFO - Data loaded successfully
+2025-09-19 17:18:49,871 - INFO - Data scaling started
+2025-09-19 17:18:51,439 - INFO - Data scaled successfully
+2025-09-19 17:18:51,439 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:18:51,479 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:18:51,481 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:18:51,543 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:18:51,546 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:18:51,546 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:18:51,546 - INFO - Data splitting started
+2025-09-19 17:18:52,351 - INFO - Data splitted successfully
+2025-09-19 17:18:52,351 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:21:25,590 - INFO - DataProcessor initializing started
+2025-09-19 17:21:25,590 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:21:25,590 - INFO - Data loading started
+2025-09-19 17:21:26,252 - INFO - Data loaded successfully
+2025-09-19 17:21:26,252 - INFO - Data scaling started
+2025-09-19 17:21:27,787 - INFO - Data scaled successfully
+2025-09-19 17:21:27,787 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:21:27,828 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:21:27,830 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:21:27,896 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:21:27,898 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:21:27,899 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:21:27,899 - INFO - Data splitting started
+2025-09-19 17:21:28,700 - INFO - Data splitted successfully
+2025-09-19 17:21:28,700 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:22:27,328 - INFO - DataProcessor initializing started
+2025-09-19 17:22:27,328 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:22:27,328 - INFO - Data loading started
+2025-09-19 17:22:27,974 - INFO - Data loaded successfully
+2025-09-19 17:22:27,974 - INFO - Data scaling started
+2025-09-19 17:22:29,539 - INFO - Data scaled successfully
+2025-09-19 17:22:29,539 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:22:29,581 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:22:29,583 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:22:29,647 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:22:29,650 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:22:29,650 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:22:29,650 - INFO - Data splitting started
+2025-09-19 17:22:30,477 - INFO - Data splitted successfully
+2025-09-19 17:22:30,477 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:22:30,682 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:22:30,685 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:22:30,693 - INFO - user2used_encoder saved successfully
+2025-09-19 17:22:30,700 - INFO - user2used_decoder saved successfully
+2025-09-19 17:22:30,723 - INFO - anime2anime_encoder saved successfully
+2025-09-19 17:22:30,745 - INFO - anime2anime_decoder saved successfully
+2025-09-19 17:22:30,791 - ERROR - Error in saving data : Cannot save file into a non-existent directory: 'artifacts/processed/artifacts/processed'
+2025-09-19 17:24:20,335 - INFO - DataProcessor initializing started
+2025-09-19 17:24:20,335 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:24:20,335 - INFO - Data loading started
+2025-09-19 17:24:21,031 - INFO - Data loaded successfully
+2025-09-19 17:24:21,031 - INFO - Data scaling started
+2025-09-19 17:24:22,618 - INFO - Data scaled successfully
+2025-09-19 17:24:22,618 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:24:22,659 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:24:22,661 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:24:22,723 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:24:22,726 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:24:22,726 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:24:22,726 - INFO - Data splitting started
+2025-09-19 17:24:23,565 - INFO - Data splitted successfully
+2025-09-19 17:24:23,566 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:24:23,764 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:24:23,766 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:24:23,775 - INFO - user2used_encoder saved successfully
+2025-09-19 17:24:23,783 - INFO - user2used_decoder saved successfully
+2025-09-19 17:24:23,805 - INFO - anime2anime_encoder saved successfully
+2025-09-19 17:24:23,828 - INFO - anime2anime_decoder saved successfully
+2025-09-19 17:24:30,454 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 17:24:30,454 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 17:40:43,876 - INFO - DataProcessor initializing started
+2025-09-19 17:40:43,876 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:40:43,876 - INFO - Data loading started
+2025-09-19 17:40:44,522 - INFO - Data loaded successfully
+2025-09-19 17:40:44,522 - INFO - Data scaling started
+2025-09-19 17:40:46,045 - INFO - Data scaled successfully
+2025-09-19 17:40:46,045 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:40:46,085 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:40:46,086 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:40:46,152 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:40:46,155 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:40:46,155 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:40:46,155 - INFO - Data splitting started
+2025-09-19 17:40:46,949 - INFO - Data splitted successfully
+2025-09-19 17:40:46,950 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:40:47,138 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:40:47,140 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:40:47,148 - INFO - user2used_encoder saved successfully
+2025-09-19 17:40:47,155 - INFO - user2used_decoder saved successfully
+2025-09-19 17:40:47,176 - INFO - anime2anime_encoder saved successfully
+2025-09-19 17:40:47,198 - INFO - anime2anime_decoder saved successfully
+2025-09-19 17:40:47,333 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 17:40:47,333 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 17:41:28,108 - INFO - DataProcessor initializing started
+2025-09-19 17:41:28,109 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:41:28,109 - INFO - Data loading started
+2025-09-19 17:41:28,787 - INFO - Data loaded successfully
+2025-09-19 17:41:28,787 - INFO - Data scaling started
+2025-09-19 17:41:30,333 - INFO - Data scaled successfully
+2025-09-19 17:41:30,333 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:41:30,373 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:41:30,376 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:41:30,442 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:41:30,445 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:41:30,445 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:41:30,445 - INFO - Data splitting started
+2025-09-19 17:41:31,278 - INFO - Data splitted successfully
+2025-09-19 17:41:31,278 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:41:31,473 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:41:31,475 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:41:31,483 - INFO - user2used_encoder saved successfully
+2025-09-19 17:41:31,490 - INFO - user2used_decoder saved successfully
+2025-09-19 17:41:31,512 - INFO - anime2anime_encoder saved successfully
+2025-09-19 17:41:31,534 - INFO - anime2anime_decoder saved successfully
+2025-09-19 17:41:31,670 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 17:41:31,670 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 17:54:04,288 - INFO - DataProcessor initializing started
+2025-09-19 17:54:04,288 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:54:04,288 - INFO - Data loading started
+2025-09-19 17:54:04,957 - INFO - Data loaded successfully
+2025-09-19 17:54:04,957 - INFO - Data scaling started
+2025-09-19 17:54:06,508 - INFO - Data scaled successfully
+2025-09-19 17:54:06,508 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:54:06,526 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:54:06,527 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:54:06,551 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:54:06,551 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:54:06,551 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:54:06,551 - INFO - Data splitting started
+2025-09-19 17:54:06,970 - ERROR - Error in splitting data : "None of [Index(['user', 'anime'], dtype='object')] are in the [columns]"
+2025-09-19 17:54:06,970 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 90 : Error in splitting data 
+2025-09-19 17:55:23,125 - INFO - DataProcessor initializing started
+2025-09-19 17:55:23,125 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:55:23,125 - INFO - Data loading started
+2025-09-19 17:55:23,782 - INFO - Data loaded successfully
+2025-09-19 17:55:23,782 - INFO - Data scaling started
+2025-09-19 17:55:25,323 - INFO - Data scaled successfully
+2025-09-19 17:55:25,323 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:55:25,363 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:55:25,365 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:55:25,427 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:55:25,430 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:55:25,430 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:55:25,430 - INFO - Data splitting started
+2025-09-19 17:55:26,249 - INFO - Data splitted successfully
+2025-09-19 17:55:26,249 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:55:26,445 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:55:26,447 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:55:26,447 - ERROR - Error in saving data : 'DataProcrssor' object has no attribute 'decoder_encoder_file'
+2025-09-19 17:55:26,447 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 128 : Error in saving data 
+2025-09-19 17:56:09,004 - INFO - DataProcessor initializing started
+2025-09-19 17:56:09,004 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:56:09,004 - INFO - Data loading started
+2025-09-19 17:56:09,668 - INFO - Data loaded successfully
+2025-09-19 17:56:09,669 - INFO - Data scaling started
+2025-09-19 17:56:11,227 - INFO - Data scaled successfully
+2025-09-19 17:56:11,227 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:56:11,268 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:56:11,270 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:56:11,332 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:56:11,335 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:56:11,335 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:56:11,335 - INFO - Data splitting started
+2025-09-19 17:56:12,196 - INFO - Data splitted successfully
+2025-09-19 17:56:12,196 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:56:12,385 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:56:12,387 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:56:12,387 - ERROR - Error in saving data : 'DataProcrssor' object has no attribute 'uese_encoder_file'
+2025-09-19 17:56:12,387 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 128 : Error in saving data 
+2025-09-19 17:56:24,346 - INFO - DataProcessor initializing started
+2025-09-19 17:56:24,346 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:56:24,347 - INFO - Data loading started
+2025-09-19 17:56:25,004 - INFO - Data loaded successfully
+2025-09-19 17:56:25,005 - INFO - Data scaling started
+2025-09-19 17:56:26,561 - INFO - Data scaled successfully
+2025-09-19 17:56:26,561 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:56:26,601 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:56:26,603 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:56:26,665 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:56:26,668 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:56:26,668 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:56:26,668 - INFO - Data splitting started
+2025-09-19 17:56:27,472 - INFO - Data splitted successfully
+2025-09-19 17:56:27,473 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:56:27,661 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:56:27,663 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:56:27,671 - INFO - user2user_encoder saved successfully
+2025-09-19 17:56:27,693 - INFO - anime2anime_encoder saved successfully
+2025-09-19 17:56:27,830 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 17:56:27,830 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 17:57:33,723 - INFO - DataProcessor initializing started
+2025-09-19 17:57:33,723 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:57:33,723 - INFO - Data loading started
+2025-09-19 17:57:34,372 - INFO - Data loaded successfully
+2025-09-19 17:57:34,372 - INFO - Data scaling started
+2025-09-19 17:57:35,913 - INFO - Data scaled successfully
+2025-09-19 17:57:35,913 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:57:35,954 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:57:35,956 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:57:36,021 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:57:36,023 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:57:36,023 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:57:36,023 - INFO - Data splitting started
+2025-09-19 17:57:36,888 - INFO - Data splitted successfully
+2025-09-19 17:57:36,888 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:57:37,077 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:57:37,079 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:57:37,087 - INFO - user2user_encoder saved successfully
+2025-09-19 17:57:37,108 - INFO - anime2anime_encoder saved successfully
+2025-09-19 17:57:37,257 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 17:57:37,257 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 17:59:37,257 - INFO - DataProcessor initializing started
+2025-09-19 17:59:37,257 - INFO - DataProcessor initialized succesfulle
+2025-09-19 17:59:37,257 - INFO - Data loading started
+2025-09-19 17:59:37,903 - INFO - Data loaded successfully
+2025-09-19 17:59:37,903 - INFO - Data scaling started
+2025-09-19 17:59:39,458 - INFO - Data scaled successfully
+2025-09-19 17:59:39,458 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 17:59:39,498 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 17:59:39,500 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 17:59:39,563 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 17:59:39,565 - INFO - Encoders and Decoders created successfully
+2025-09-19 17:59:39,565 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 17:59:39,565 - INFO - Data splitting started
+2025-09-19 17:59:40,364 - INFO - Data splitted successfully
+2025-09-19 17:59:40,365 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 17:59:40,553 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 17:59:40,556 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 17:59:40,563 - INFO - user2user_encoder saved successfully
+2025-09-19 17:59:40,585 - INFO - anime2anime_encoder saved successfully
+2025-09-19 17:59:40,754 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 17:59:40,754 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 18:08:50,323 - INFO - DataProcessor initializing started
+2025-09-19 18:08:50,323 - INFO - DataProcessor initialized succesfulle
+2025-09-19 18:08:50,323 - INFO - Data loading started
+2025-09-19 18:08:50,977 - INFO - Data loaded successfully
+2025-09-19 18:08:50,977 - INFO - Data scaling started
+2025-09-19 18:08:52,537 - INFO - Data scaled successfully
+2025-09-19 18:08:52,537 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 18:08:52,577 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 18:08:52,579 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 18:08:52,642 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 18:08:52,645 - INFO - Encoders and Decoders created successfully
+2025-09-19 18:08:52,645 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 18:08:52,645 - INFO - Data splitting started
+2025-09-19 18:08:53,497 - INFO - Data splitted successfully
+2025-09-19 18:08:53,497 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 18:08:53,692 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 18:08:53,694 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 18:08:53,702 - INFO - user2user_encoder saved successfully
+2025-09-19 18:08:53,723 - INFO - anime2anime_encoder saved successfully
+2025-09-19 18:08:53,865 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 18:08:53,865 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 18:10:24,766 - INFO - DataProcessor initializing started
+2025-09-19 18:10:24,766 - INFO - DataProcessor initialized succesfulle
+2025-09-19 18:10:24,766 - INFO - Data loading started
+2025-09-19 18:10:25,417 - INFO - Data loaded successfully
+2025-09-19 18:10:25,417 - INFO - Data scaling started
+2025-09-19 18:10:26,975 - INFO - Data scaled successfully
+2025-09-19 18:10:26,975 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 18:10:27,015 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 18:10:27,017 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 18:10:27,079 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 18:10:27,081 - INFO - Encoders and Decoders created successfully
+2025-09-19 18:10:27,082 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 18:10:27,082 - INFO - Data splitting started
+2025-09-19 18:10:27,919 - INFO - Data splitted successfully
+2025-09-19 18:10:27,919 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 18:10:28,123 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 18:10:28,126 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 18:10:28,134 - INFO - user2user_encoder saved successfully
+2025-09-19 18:10:28,155 - INFO - anime2anime_encoder saved successfully
+2025-09-19 18:10:28,320 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 18:10:28,321 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 18:10:28,971 - INFO - DataProcessor initializing started
+2025-09-19 18:10:28,971 - INFO - DataProcessor initialized succesfulle
+2025-09-19 18:10:28,971 - INFO - Data loading started
+2025-09-19 18:10:29,639 - INFO - Data loaded successfully
+2025-09-19 18:10:29,639 - INFO - Data scaling started
+2025-09-19 18:10:31,184 - INFO - Data scaled successfully
+2025-09-19 18:10:31,184 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 18:10:31,223 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 18:10:31,225 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 18:10:31,285 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 18:10:31,288 - INFO - Encoders and Decoders created successfully
+2025-09-19 18:10:31,288 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 18:10:31,288 - INFO - Data splitting started
+2025-09-19 18:10:32,157 - INFO - Data splitted successfully
+2025-09-19 18:10:32,157 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 18:10:32,360 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 18:10:32,362 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 18:10:32,370 - INFO - user2user_encoder saved successfully
+2025-09-19 18:10:32,391 - INFO - anime2anime_encoder saved successfully
+2025-09-19 18:10:32,545 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 18:10:32,545 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-19 18:10:42,400 - INFO - DataProcessor initializing started
+2025-09-19 18:10:42,400 - INFO - DataProcessor initialized succesfulle
+2025-09-19 18:10:42,400 - INFO - Data loading started
+2025-09-19 18:10:43,062 - INFO - Data loaded successfully
+2025-09-19 18:10:43,062 - INFO - Data scaling started
+2025-09-19 18:10:44,590 - INFO - Data scaled successfully
+2025-09-19 18:10:44,590 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 18:10:44,630 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 18:10:44,632 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 18:10:44,694 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 18:10:44,697 - INFO - Encoders and Decoders created successfully
+2025-09-19 18:10:44,697 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 18:10:44,697 - INFO - Data splitting started
+2025-09-19 18:10:45,520 - ERROR - Error in splitting data : 'list' object has no attribute 'shape'
+2025-09-19 18:10:45,520 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 93 : Error in splitting data 
+2025-09-19 18:10:55,314 - INFO - DataProcessor initializing started
+2025-09-19 18:10:55,314 - INFO - DataProcessor initialized succesfulle
+2025-09-19 18:10:55,314 - INFO - Data loading started
+2025-09-19 18:10:55,962 - INFO - Data loaded successfully
+2025-09-19 18:10:55,963 - INFO - Data scaling started
+2025-09-19 18:10:57,494 - INFO - Data scaled successfully
+2025-09-19 18:10:57,494 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 18:10:57,533 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 18:10:57,535 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 18:10:57,596 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 18:10:57,599 - INFO - Encoders and Decoders created successfully
+2025-09-19 18:10:57,599 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 18:10:57,599 - INFO - Data splitting started
+2025-09-19 18:10:58,418 - ERROR - Error in splitting data : 'list' object has no attribute 'shape'
+2025-09-19 18:10:58,419 - ERROR - Error in processing data : Error in /Users/nimakelidari/Desktop/Master-USC/MLOPS-PROJECTS/MLOPS-2/src/data_processing.py, line 93 : Error in splitting data 
+2025-09-19 18:12:20,913 - INFO - DataProcessor initializing started
+2025-09-19 18:12:20,913 - INFO - DataProcessor initialized succesfulle
+2025-09-19 18:12:20,913 - INFO - Data loading started
+2025-09-19 18:12:21,575 - INFO - Data loaded successfully
+2025-09-19 18:12:21,575 - INFO - Data scaling started
+2025-09-19 18:12:23,121 - INFO - Data scaled successfully
+2025-09-19 18:12:23,121 - INFO - encoder-encoder creation started for : user_id 
+2025-09-19 18:12:23,161 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-19 18:12:23,162 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-19 18:12:23,224 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-19 18:12:23,227 - INFO - Encoders and Decoders created successfully
+2025-09-19 18:12:23,227 - INFO - User count -> 5332   |   Anime count -> 17149 
+2025-09-19 18:12:23,227 - INFO - Data splitting started
+2025-09-19 18:12:24,147 - INFO - Data splitted successfully
+2025-09-19 18:12:24,147 - INFO - Anime data loading and merging with synopsis started
+2025-09-19 18:12:24,342 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-19 18:12:24,344 - INFO - Data is saving in artifacts/processed directory started
+2025-09-19 18:12:24,352 - INFO - user2user_encoder saved successfully
+2025-09-19 18:12:24,374 - INFO - anime2anime_encoder saved successfully
+2025-09-19 18:12:24,513 - INFO - All data is saved in artifacts/processed directory
+2025-09-19 18:12:24,513 - INFO - Data process executed successfully. outputs are in artifacts/processed directory

@@ -1,0 +1,30 @@
+2025-09-18 14:26:08,059 - INFO - Successfully read the YAML file :D
+2025-09-18 14:26:08,059 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-18 14:26:08,059 - INFO - Started data ingestion data process
+2025-09-18 14:26:10,628 - INFO -  starting download: artifacts/raw/anime.csv
+2025-09-18 14:26:13,117 - INFO -  starting download: artifacts/raw/anime_with_synopsis.csv
+2025-09-18 14:26:14,270 - INFO -  starting download: artifacts/raw/animelist.csv
+2025-09-18 14:26:46,238 - INFO - Large file detected, Only downloaded 1000 rows
+2025-09-18 14:26:46,238 - INFO - CSV file successfully downloaded to artifacts/raw :)
+2025-09-18 14:26:46,338 - INFO - Data ingestion done successfully :)
+2025-09-18 14:26:46,338 - INFO - Data ingestion completed!
+2025-09-18 14:43:20,725 - INFO - Successfully read the YAML file :D
+2025-09-18 14:43:20,725 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-18 14:43:20,725 - INFO - Started data ingestion data process
+2025-09-18 14:43:21,547 - INFO -  starting download: artifacts/raw/anime.csv
+2025-09-18 14:43:23,173 - INFO -  starting download: artifacts/raw/anime_with_synopsis.csv
+2025-09-18 14:43:23,864 - INFO -  starting download: artifacts/raw/animelist.csv
+2025-09-18 14:43:43,008 - INFO - Large file detected, Only downloaded 2000 rows
+2025-09-18 14:43:43,008 - INFO - CSV file successfully downloaded to artifacts/raw :)
+2025-09-18 14:43:43,086 - INFO - Data ingestion done successfully :)
+2025-09-18 14:43:43,086 - INFO - Data ingestion completed!
+2025-09-18 20:41:48,562 - INFO - Successfully read the YAML file :D
+2025-09-18 20:41:48,562 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-18 20:41:48,562 - INFO - Started data ingestion data process
+2025-09-18 20:41:50,175 - INFO -  starting download: artifacts/raw/anime.csv
+2025-09-18 20:41:51,858 - INFO -  starting download: artifacts/raw/anime_with_synopsis.csv
+2025-09-18 20:41:52,930 - INFO -  starting download: artifacts/raw/animelist.csv
+2025-09-18 20:42:19,430 - INFO - Large file detected, Only downloaded 1500 rows
+2025-09-18 20:42:19,430 - INFO - CSV file successfully downloaded to artifacts/raw :)
+2025-09-18 20:42:19,547 - INFO - Data ingestion done successfully :)
+2025-09-18 20:42:19,547 - INFO - Data ingestion completed!

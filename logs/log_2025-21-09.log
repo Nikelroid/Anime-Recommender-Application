@@ -1,0 +1,143 @@
+2025-09-21 18:34:48,848 - INFO - Successfully read the YAML file :D
+2025-09-21 18:34:48,848 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-21 18:34:48,848 - INFO - Started data ingestion data process
+2025-09-21 18:34:49,864 - INFO - anime.csv found in artifacts/raw directory successfully
+2025-09-21 18:34:49,864 - INFO - anime_with_synopsis.csv found in artifacts/raw directory successfully
+2025-09-21 18:34:49,864 - INFO - Checking existing animelist_filtered.csv file...
+2025-09-21 18:34:51,206 - INFO - Min user ratings: 1, Row limit: 1000, Threshold: 10
+2025-09-21 18:34:51,207 - INFO - All users above limit: False, Has user below threshold: True
+2025-09-21 18:34:51,207 - INFO - Existing filtered file doesn't meet criteria, will reprocess...
+2025-09-21 18:34:51,207 - INFO - Original animelist.csv found, processing...
+2025-09-21 18:34:51,207 - INFO - Anime rating data filtering started
+2025-09-21 18:35:19,998 - INFO - Anime rating data filtered successfully
+2025-09-21 18:35:19,999 - INFO - CSV file animelist_filtered.csv successfully saved to artifacts/raw :)
+2025-09-21 18:35:19,999 - INFO - Data ingestion done successfully :)
+2025-09-21 18:35:19,999 - INFO - Data ingestion completed!
+2025-09-21 18:37:00,498 - INFO - Successfully read the YAML file :D
+2025-09-21 18:37:00,498 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-21 18:37:00,498 - INFO - Started data ingestion data process
+2025-09-21 18:37:01,552 - INFO - anime.csv found in artifacts/raw directory successfully
+2025-09-21 18:37:01,552 - INFO - anime_with_synopsis.csv found in artifacts/raw directory successfully
+2025-09-21 18:37:01,552 - INFO - Checking existing animelist_filtered.csv file...
+2025-09-21 18:37:02,950 - INFO - Min user ratings: 1, Row limit: 1000, Threshold: 10
+2025-09-21 18:37:02,950 - INFO - All users above limit: False, Has user below threshold: True
+2025-09-21 18:37:02,950 - INFO - Existing filtered file doesn't meet criteria, will reprocess...
+2025-09-21 18:37:02,950 - INFO - Original animelist.csv found, processing...
+2025-09-21 18:37:02,950 - INFO - Anime rating data filtering started
+2025-09-21 18:37:20,685 - INFO - Original data: 73307504 rows
+2025-09-21 18:37:20,686 - INFO - After cleaning: 41845235 rows
+2025-09-21 18:37:20,686 - INFO - After user filtering: 5169987 rows
+2025-09-21 18:37:20,686 - INFO - Users with >= 1000 ratings: 3451
+2025-09-21 18:37:26,373 - INFO - Anime rating data filtered successfully
+2025-09-21 18:37:26,373 - INFO - CSV file animelist_filtered.csv successfully saved to artifacts/raw :)
+2025-09-21 18:37:26,373 - INFO - Data ingestion done successfully :)
+2025-09-21 18:37:26,373 - INFO - Data ingestion completed!
+2025-09-21 18:37:52,636 - INFO - Successfully read the YAML file :D
+2025-09-21 18:37:52,636 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-21 18:37:52,637 - INFO - Started data ingestion data process
+2025-09-21 18:37:53,727 - INFO - anime.csv found in artifacts/raw directory successfully
+2025-09-21 18:37:53,727 - INFO - anime_with_synopsis.csv found in artifacts/raw directory successfully
+2025-09-21 18:37:53,727 - INFO - Checking existing animelist_filtered.csv file...
+2025-09-21 18:37:54,480 - INFO - Min user ratings: 1000, Row limit: 1000, Threshold: 10
+2025-09-21 18:37:54,480 - INFO - All users above limit: True, Has user below threshold: True
+2025-09-21 18:37:54,480 - INFO - Same animelist_filtered.csv file exists, dont need to filter again, go to next file
+2025-09-21 18:37:54,481 - INFO - Data ingestion done successfully :)
+2025-09-21 18:37:54,481 - INFO - Data ingestion completed!
+2025-09-21 18:38:12,070 - INFO - DataProcessor initializing started
+2025-09-21 18:38:12,071 - INFO - DataProcessor initialized succesfulle
+2025-09-21 18:38:12,071 - INFO - Data loading started
+2025-09-21 18:38:12,620 - INFO - Data loaded successfully
+2025-09-21 18:38:12,621 - INFO - Data scaling started
+2025-09-21 18:38:13,853 - INFO - Data scaled successfully
+2025-09-21 18:38:13,853 - INFO - encoder-encoder creation started for : user_id 
+2025-09-21 18:38:13,884 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-21 18:38:13,885 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-21 18:38:13,937 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-21 18:38:13,939 - INFO - Encoders and Decoders created successfully
+2025-09-21 18:38:13,939 - INFO - User count -> 3451   |   Anime count -> 17121 
+2025-09-21 18:38:13,939 - INFO - Data splitting started
+2025-09-21 18:38:14,570 - INFO - Data splitted to test-train, then converted tp list successfully
+2025-09-21 18:38:14,570 - INFO - Anime data loading and merging with synopsis started
+2025-09-21 18:38:14,762 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-21 18:38:14,764 - INFO - Data is saving in artifacts/processed directory started
+2025-09-21 18:38:14,770 - INFO - user2user_encoder.pkl saved successfully
+2025-09-21 18:38:14,791 - INFO - anime2anime_encoder.pkl saved successfully
+2025-09-21 18:38:14,922 - INFO - All data is saved in artifacts/processed directory
+2025-09-21 18:38:14,922 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-21 18:39:07,404 - INFO - DataProcessor initializing started
+2025-09-21 18:39:07,404 - INFO - DataProcessor initialized succesfulle
+2025-09-21 18:39:07,404 - INFO - Data loading started
+2025-09-21 18:39:07,984 - INFO - Data loaded successfully
+2025-09-21 18:39:07,984 - INFO - Data scaling started
+2025-09-21 18:39:09,216 - INFO - Data scaled successfully
+2025-09-21 18:39:09,216 - INFO - encoder-encoder creation started for : user_id 
+2025-09-21 18:39:09,247 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-21 18:39:09,249 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-21 18:39:09,299 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-21 18:39:09,301 - INFO - Encoders and Decoders created successfully
+2025-09-21 18:39:09,301 - INFO - User count -> 3451   |   Anime count -> 17121 
+2025-09-21 18:39:09,301 - INFO - Data splitting started
+2025-09-21 18:39:09,973 - INFO - Data splitted to test-train, then converted tp list successfully
+2025-09-21 18:39:09,973 - INFO - Anime data loading and merging with synopsis started
+2025-09-21 18:39:10,171 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-21 18:39:10,173 - INFO - Data is saving in artifacts/processed directory started
+2025-09-21 18:39:10,178 - INFO - user2user_encoder.pkl saved successfully
+2025-09-21 18:39:10,199 - INFO - anime2anime_encoder.pkl saved successfully
+2025-09-21 18:39:10,329 - INFO - All data is saved in artifacts/processed directory
+2025-09-21 18:39:10,330 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-21 18:39:28,236 - INFO - Successfully read the YAML file :D
+2025-09-21 18:39:33,443 - INFO - CometML initialized
+2025-09-21 18:39:33,443 - INFO - ModelTrain class initialized
+2025-09-21 18:39:33,511 - INFO - Data loaded and splitted successfully
+2025-09-21 18:39:33,512 - INFO - Successfully read the YAML file :D
+2025-09-21 18:39:33,512 - INFO - Loaded configuration from config.yaml
+2025-09-21 18:39:33,512 - INFO - Initializing model started
+2025-09-21 18:39:33,558 - INFO - Model initialized successfully
+2025-09-21 19:01:50,574 - INFO - Successfully read the YAML file :D
+2025-09-21 19:01:50,574 - INFO - Data Ingestion started with mlops-project-2-nima and files is ['anime.csv', 'anime_with_synopsis.csv', 'animelist.csv']
+2025-09-21 19:01:50,574 - INFO - Started data ingestion data process
+2025-09-21 19:01:51,758 - INFO - anime.csv found in artifacts/raw directory successfully
+2025-09-21 19:01:51,758 - INFO - anime_with_synopsis.csv found in artifacts/raw directory successfully
+2025-09-21 19:01:51,758 - INFO - Checking existing animelist_filtered.csv file...
+2025-09-21 19:01:52,544 - INFO - Min user ratings: 1000, Row limit: 500, Threshold: 10
+2025-09-21 19:01:52,544 - INFO - All users above limit: True, Has user below threshold: False
+2025-09-21 19:01:52,544 - INFO - Existing filtered file doesn't meet criteria, will reprocess...
+2025-09-21 19:01:52,544 - INFO - Original animelist.csv found, processing...
+2025-09-21 19:01:52,544 - INFO - Anime rating data filtering started
+2025-09-21 19:02:11,252 - INFO - Original data: 73307504 rows
+2025-09-21 19:02:11,255 - INFO - After cleaning: 41845235 rows
+2025-09-21 19:02:11,256 - INFO - After user filtering: 14608239 rows
+2025-09-21 19:02:11,257 - INFO - Users with >= 500 ratings: 17548
+2025-09-21 19:02:26,807 - INFO - Anime rating data filtered successfully
+2025-09-21 19:02:26,808 - INFO - CSV file animelist_filtered.csv successfully saved to artifacts/raw :)
+2025-09-21 19:02:26,808 - INFO - Data ingestion done successfully :)
+2025-09-21 19:02:26,808 - INFO - Data ingestion completed!
+2025-09-21 19:03:11,060 - INFO - DataProcessor initializing started
+2025-09-21 19:03:11,060 - INFO - DataProcessor initialized succesfulle
+2025-09-21 19:03:11,060 - INFO - Data loading started
+2025-09-21 19:03:12,640 - INFO - Data loaded successfully
+2025-09-21 19:03:12,640 - INFO - Data scaling started
+2025-09-21 19:03:16,284 - INFO - Data scaled successfully
+2025-09-21 19:03:16,284 - INFO - encoder-encoder creation started for : user_id 
+2025-09-21 19:03:16,391 - INFO - encoder-encoder created for : user_id successfully! 
+2025-09-21 19:03:16,400 - INFO - encoder-encoder creation started for : anime_id 
+2025-09-21 19:03:16,536 - INFO - encoder-encoder created for : anime_id successfully! 
+2025-09-21 19:03:16,546 - INFO - Encoders and Decoders created successfully
+2025-09-21 19:03:16,546 - INFO - User count -> 17548   |   Anime count -> 17140 
+2025-09-21 19:03:16,546 - INFO - Data splitting started
+2025-09-21 19:03:19,278 - INFO - Data splitted to test-train, then converted tp list successfully
+2025-09-21 19:03:19,278 - INFO - Anime data loading and merging with synopsis started
+2025-09-21 19:03:19,487 - INFO - Anime data loaded and merged with synopsis successfully 
+2025-09-21 19:03:19,489 - INFO - Data is saving in artifacts/processed directory started
+2025-09-21 19:03:19,514 - INFO - user2user_encoder.pkl saved successfully
+2025-09-21 19:03:19,536 - INFO - anime2anime_encoder.pkl saved successfully
+2025-09-21 19:03:19,984 - INFO - All data is saved in artifacts/processed directory
+2025-09-21 19:03:19,984 - INFO - Data process executed successfully. outputs are in artifacts/processed directory
+2025-09-21 19:03:19,986 - INFO - Successfully read the YAML file :D
+2025-09-21 19:03:25,185 - INFO - CometML initialized
+2025-09-21 19:03:25,185 - INFO - ModelTrain class initialized
+2025-09-21 19:03:25,313 - INFO - Data loaded and splitted successfully
+2025-09-21 19:03:25,314 - INFO - Successfully read the YAML file :D
+2025-09-21 19:03:25,314 - INFO - Loaded configuration from config.yaml
+2025-09-21 19:03:25,314 - INFO - Initializing model started
+2025-09-21 19:03:25,354 - INFO - Model initialized successfully
