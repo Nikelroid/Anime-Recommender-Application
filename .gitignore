@@ -1,6 +1,6 @@
 .venv/
 artifacts/raw/
 artifacts/processed/
-artifacts/model/
+artifacts/models/
 artifacts/weights/
 MLOPS_2.egg-info/
