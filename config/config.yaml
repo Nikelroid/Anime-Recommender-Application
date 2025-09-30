@@ -4,7 +4,7 @@ data_ingestion:
     - 'anime.csv'
     - 'anime_with_synopsis.csv'
     - 'animelist.csv'
-  row_limit : 500
+  row_limit : 1200
   threshold : 10
 
 model_training:
@@ -17,4 +17,19 @@ model_training:
   verbose : 1
   force_training : True
   epochs : 10
+
+suggestion:
+  n : 20
+  genres_weight : 0.3
+  user_weight : 0.7
+  content_weight : 0.3
+  min_rating : 1
+  max_rating : 10
+  inf_epoch : 300
+  inf_lr_rate : 0.01
+  n_similar_users: 30 
+  diversity_weight: 0.2
+  
+
+
 

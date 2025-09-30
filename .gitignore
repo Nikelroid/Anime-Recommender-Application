@@ -4,3 +4,7 @@ artifacts/processed/
 artifacts/models/
 artifacts/weights/
 MLOPS_2.egg-info/
+src/__pycache__
+pipeline/__pycache__
+config/__pycache__
+utils/__pycache__

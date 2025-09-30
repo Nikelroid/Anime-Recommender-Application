@@ -83,6 +83,7 @@ class ModelTrain:
         epochs = self.config['model_training']['epochs']
         
         os.makedirs(self.checkpoint_dir, exist_ok=True)
+        
         self.model = base_model.RecommenderNet(self.n_user, self.n_anime)
 
         checkpoint_filepath = os.path.join(self.checkpoint_dir, self.checkpoint_file_name)

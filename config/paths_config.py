@@ -23,7 +23,7 @@ ANIME_ENCODER_FILE = "anime2anime_encoder.pkl"
 # ============ 3.MODEL_TRAINING =================
 
 CHECKPOINT_DIR = "artifacts/models"
-WEIGHTS_DIR = "artifacts/wights"
+WEIGHTS_DIR = "artifacts/weights"
 
 CHECKPOINT_FILE_NAME = 'best_recommender_model.weights.h5'
 WEIGHTS_FILE_NAME = {'anime':'anime_weights.pkl','user':'user_weights.pkl'}

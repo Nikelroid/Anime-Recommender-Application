@@ -97,17 +97,19 @@ class DataProcrssor:
             raise CustomException('Error in splitting data to test-train ',e)
     
     def load_merge_anime_df(self,df,syn_df=None):
-        df = df.replace("Unknown", np.nan).rename(columns={"MAL_ID": "anime_id","English name": "anime_name","Score": "score","Genres": "genres"})
+        df = df.replace("Unknown", np.nan).rename(columns={"MAL_ID": "anime_id","Name": "anime_name","Score": "score","Genres": "genres"})
         if syn_df is not None:syn_df = syn_df.rename(columns={"MAL_ID": "anime_id","sypnopsis": "syn"})
-        return df.merge(syn_df[["anime_id", "syn"]], on="anime_id", how="left")
+        return df.merge(syn_df[["anime_id", "syn"]], on="anime_id", how="right")
 
-    def prcess_anima_data(self):
+    def prcess_anime_data(self):
         try:
             logger.info ('Anime data loading and merging with synopsis started')
             anime_df = pd.read_csv(self.anime_dir)
             syn_df = pd.read_csv(self.synopsis_dir)
             self.anime_df = self.load_merge_anime_df(anime_df,syn_df)[['anime_id','anime_name','score','genres','syn']]
             self.anime_df.sort_values(by=['score'],inplace=True,ascending=False,na_position='last')
+            self.anime_df['genres'] = self.anime_df['genres'].fillna('')
+            self.anime_df['genre_list'] = self.anime_df['genres'].str.split(', ').apply(list)
             logger.info ('Anime data loaded and merged with synopsis successfully ')
 
         except Exception as e:
@@ -142,7 +144,7 @@ class DataProcrssor:
             self.scale_data()
             self.encode_data()
             self.split_data(test_size=100000)
-            self.prcess_anima_data()
+            self.prcess_anime_data()
             self.save_artifacts()
             logger.info (f'Data process executed successfully. outputs are in {self.output_dir} directory')
 

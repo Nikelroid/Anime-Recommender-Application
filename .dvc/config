@@ -1,0 +1,4 @@
+[core]
+    remote = anime-data-remote
+['remote "anime-data-remote"']
+    url = gs://dvc-bucket-anime-recommender
