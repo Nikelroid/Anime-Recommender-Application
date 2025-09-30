@@ -1,0 +1,118 @@
+2025-09-30 14:30:59,105 - INFO - Successfully read the YAML file :D
+2025-09-30 14:31:00,693 - INFO - CometML initialized
+2025-09-30 14:31:00,693 - INFO - ModelTrain class initialized
+2025-09-30 14:31:00,789 - INFO - Data loaded: 3005743 train samples, 100000 test samples
+2025-09-30 14:31:00,789 - INFO - Users: 1735, Animes: 17117
+2025-09-30 14:31:00,791 - INFO - Successfully read the YAML file :D
+2025-09-30 14:31:00,791 - INFO - Loaded configuration from config.yaml
+2025-09-30 14:31:00,791 - INFO - Initializing enhanced model
+2025-09-30 14:31:00,873 - INFO - Enhanced model initialized with 691,109 parameters
+2025-09-30 14:31:00,877 - INFO - Starting model training...
+2025-09-30 14:33:55,662 - INFO - Training completed. Best val_loss: 0.5785
+2025-09-30 14:33:55,670 - INFO - Weights saved successfully
+2025-09-30 14:33:55,670 - INFO - Anime weights shape: (17117, 32)
+2025-09-30 14:33:55,670 - INFO - User weights shape: (1735, 32)
+2025-09-30 14:34:04,678 - INFO - Training pipeline completed successfully
+2025-09-30 14:34:25,619 - INFO - Successfully read the YAML file :D
+2025-09-30 14:36:41,675 - INFO - Successfully read the YAML file :D
+2025-09-30 14:36:42,197 - INFO - Successfully read the YAML file :D
+2025-09-30 14:36:42,197 - INFO - Loaded configuration from config.yaml
+2025-09-30 14:36:42,197 - INFO - Initializing enhanced model
+2025-09-30 14:36:42,250 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-09-30 14:37:03,584 - INFO - Successfully read the YAML file :D
+2025-09-30 14:37:04,086 - INFO - Successfully read the YAML file :D
+2025-09-30 14:37:04,086 - INFO - Loaded configuration from config.yaml
+2025-09-30 14:37:04,086 - INFO - Initializing enhanced model
+2025-09-30 14:37:04,136 - INFO - Enhanced model initialized with 691,109 parameters
+2025-09-30 14:37:40,793 - INFO - Successfully read the YAML file :D
+2025-09-30 14:37:42,602 - INFO - CometML initialized
+2025-09-30 14:37:42,602 - INFO - ModelTrain class initialized
+2025-09-30 14:37:42,683 - INFO - Data loaded: 3005743 train samples, 100000 test samples
+2025-09-30 14:37:42,683 - INFO - Users: 1735, Animes: 17117
+2025-09-30 14:37:42,685 - INFO - Successfully read the YAML file :D
+2025-09-30 14:37:42,685 - INFO - Loaded configuration from config.yaml
+2025-09-30 14:37:42,685 - INFO - Initializing enhanced model
+2025-09-30 14:37:42,740 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-09-30 14:37:42,744 - INFO - Starting model training...
+2025-09-30 14:43:23,888 - INFO - Successfully read the YAML file :D
+2025-09-30 14:43:24,373 - INFO - Successfully read the YAML file :D
+2025-09-30 14:43:24,373 - INFO - Loaded configuration from config.yaml
+2025-09-30 14:43:24,373 - INFO - Initializing enhanced model
+2025-09-30 14:43:24,425 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-09-30 14:43:58,259 - INFO - Successfully read the YAML file :D
+2025-09-30 14:43:59,803 - INFO - CometML initialized
+2025-09-30 14:43:59,803 - INFO - ModelTrain class initialized
+2025-09-30 14:43:59,868 - INFO - Data loaded: 3005743 train samples, 100000 test samples
+2025-09-30 14:43:59,868 - INFO - Users: 1735, Animes: 17117
+2025-09-30 14:43:59,870 - INFO - Successfully read the YAML file :D
+2025-09-30 14:43:59,870 - INFO - Loaded configuration from config.yaml
+2025-09-30 14:43:59,870 - INFO - Initializing enhanced model
+2025-09-30 14:43:59,921 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-09-30 14:43:59,925 - INFO - Starting model training...
+2025-09-30 16:34:15,372 - INFO - DataProcessor initializing started
+2025-09-30 16:34:15,374 - INFO - Successfully read the YAML file :D
+2025-09-30 16:34:15,374 - INFO - DataProcessor initialized successfully
+2025-09-30 16:34:15,374 - INFO - ============================================================
+2025-09-30 16:34:15,374 - INFO - DATA PROCESSING PIPELINE STARTED
+2025-09-30 16:34:15,374 - INFO - ============================================================
+2025-09-30 16:34:15,374 - INFO - Data loading started
+2025-09-30 16:34:15,798 - INFO - Initial data loaded: 3,105,743 ratings
+2025-09-30 16:34:16,017 - INFO - After removing duplicates: 3,105,743 ratings
+2025-09-30 16:34:16,030 - INFO - After removing invalid ratings: 3,105,743 ratings
+2025-09-30 16:34:16,054 - INFO - Final dataset: 3,105,743 ratings
+2025-09-30 16:34:16,054 - INFO - Users: 1,735 | Anime: 17,117
+2025-09-30 16:34:16,054 - INFO - Sparsity: 89.54%
+2025-09-30 16:34:16,054 - INFO - Avg ratings per user: 1790.1
+2025-09-30 16:34:16,054 - INFO - Avg ratings per anime: 181.4
+2025-09-30 16:34:16,054 - INFO - Data scaling started
+2025-09-30 16:34:16,060 - INFO - Original rating range: [1.0, 10.0]
+2025-09-30 16:34:16,062 - INFO - Original rating mean: 6.73
+2025-09-30 16:34:16,075 - INFO - Original rating std: 1.93
+2025-09-30 16:34:16,091 - INFO - Scaled rating range: [0.000, 1.000]
+2025-09-30 16:34:16,093 - INFO - Scaled rating mean: 0.637
+2025-09-30 16:34:16,093 - INFO - Data scaled successfully
+2025-09-30 16:34:16,093 - INFO - Encoder creation started for: user_id
+2025-09-30 16:34:16,113 - INFO - Encoder created for user_id: 1735 unique values
+2025-09-30 16:34:16,115 - INFO - Encoder creation started for: anime_id
+2025-09-30 16:34:16,173 - INFO - Encoder created for anime_id: 17117 unique values
+2025-09-30 16:34:16,175 - INFO - Encoders created successfully
+2025-09-30 16:34:16,175 - INFO - User count: 1735 | Anime count: 17117
+2025-09-30 16:34:16,175 - INFO - Data splitting started
+2025-09-30 16:34:20,033 - INFO - Used stratified split by user
+2025-09-30 16:34:20,033 - INFO - Train size: 2,794,388 (90.0%)
+2025-09-30 16:34:20,034 - INFO - Test size: 311,355 (10.0%)
+2025-09-30 16:34:20,034 - INFO - Data split successfully
+2025-09-30 16:34:20,064 - INFO - Anime data loading and processing started
+2025-09-30 16:34:20,262 - INFO - Filtered anime data: 17117 anime with ratings
+2025-09-30 16:34:20,276 - INFO - Anime data processed successfully
+2025-09-30 16:34:20,279 - INFO - Saving artifacts to artifacts/processed
+2025-09-30 16:34:20,283 - INFO - user2user_encoder.pkl saved (1735 items)
+2025-09-30 16:34:20,309 - INFO - anime2anime_encoder.pkl saved (17117 items)
+2025-09-30 16:34:20,518 - INFO - Train and test arrays saved
+2025-09-30 16:34:20,627 - INFO - Anime metadata saved
+2025-09-30 16:34:20,627 - INFO - All artifacts saved successfully to artifacts/processed
+2025-09-30 16:34:20,627 - INFO - ============================================================
+2025-09-30 16:34:20,627 - INFO - DATA PROCESSING COMPLETED SUCCESSFULLY
+2025-09-30 16:34:20,627 - INFO - Output directory: artifacts/processed
+2025-09-30 16:34:20,627 - INFO - ============================================================
+2025-09-30 16:34:20,629 - INFO - Successfully read the YAML file :D
+2025-09-30 16:34:22,426 - INFO - CometML initialized
+2025-09-30 16:34:22,426 - INFO - ModelTrain class initialized
+2025-09-30 16:34:22,496 - INFO - Data loaded: 2794388 train samples, 311355 test samples
+2025-09-30 16:34:22,497 - INFO - Users: 1735, Animes: 17117
+2025-09-30 16:34:22,498 - INFO - Successfully read the YAML file :D
+2025-09-30 16:34:22,498 - INFO - Loaded configuration from config.yaml
+2025-09-30 16:34:22,498 - INFO - Initializing enhanced model
+2025-09-30 16:34:22,575 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-09-30 16:34:22,579 - INFO - Starting model training...
+2025-09-30 16:40:22,019 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='www.comet.com', port=443): Read timed out. (read timeout=10)")': /clientlib/batch/logger/experiment/parameter
+2025-09-30 16:45:04,951 - INFO - Training completed. Best val_loss: 0.0209
+2025-09-30 16:45:04,965 - INFO - Weights saved successfully
+2025-09-30 16:45:04,965 - INFO - Anime weights shape: (17117, 128)
+2025-09-30 16:45:04,965 - INFO - User weights shape: (1735, 128)
+2025-09-30 16:45:23,166 - INFO - Training pipeline completed successfully
+2025-09-30 16:47:52,528 - INFO - Successfully read the YAML file :D
+2025-09-30 16:47:52,716 - INFO - Successfully read the YAML file :D
+2025-09-30 16:47:52,716 - INFO - Loaded configuration from config.yaml
+2025-09-30 16:47:52,717 - INFO - Initializing enhanced model
+2025-09-30 16:47:52,753 - INFO - Enhanced model initialized with 2,574,629 parameters

@@ -2,7 +2,7 @@ import joblib
 import pandas as pd
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.layers import Input, Flatten, Concatenate, Activation, Dropout
+from tensorflow.keras.layers import Input, Flatten, Concatenate, Activation, Dropout,Dot, Multiply, Add
 from tensorflow.keras.models import Model
 from collections import Counter
 from config.paths_config import *
@@ -259,23 +259,40 @@ class Suggestion:
         user_vec = Input(shape=(embedding_size,), name='user_vec')
         anime = Input(shape=(1,), name='anime')
         
-        # Get anime embedding from predictor model
         anime_emb = self.predictor_model.get_layer('anime_embedding')(anime)
+        anime_bias = self.predictor_model.get_layer('anime_bias')(anime)
         anime_vec = Flatten(name='flatten_anime')(anime_emb)
+        anime_bias_vec = Flatten(name='flatten_anime_bias')(anime_bias)
         
-        # Reuse predictor model layers
-        x = Concatenate(name='concat')([user_vec, anime_vec])
-        x = self.predictor_model.get_layer('dense')(x)
-        x = self.predictor_model.get_layer('batch_normalization')(x)
-        x = Activation('relu')(x)
-        x = Dropout(0.3)(x)
+        dot_product = Dot(axes=1, name='dot_product')([user_vec, anime_vec])
+        
+        interaction = Multiply(name='element_multiply')([user_vec, anime_vec])
+        
+        x = Concatenate(name='concat')([user_vec, anime_vec, interaction])
         x = self.predictor_model.get_layer('dense_1')(x)
-        x = self.predictor_model.get_layer('batch_normalization_1')(x)
+        x = self.predictor_model.get_layer('layer_norm_1')(x)
+        x = Activation('relu')(x)
+        x = Dropout(0.4)(x)
+        
+        x = self.predictor_model.get_layer('dense_2')(x)
+        x = self.predictor_model.get_layer('layer_norm_2')(x)
         x = Activation('relu')(x)
         x = Dropout(0.3)(x)
-        x = self.predictor_model.get_layer('dense_2')(x)
         
-        self.inf_model = Model(inputs=[user_vec, anime], outputs=x)
+        x = self.predictor_model.get_layer('dense_3')(x)
+        x = self.predictor_model.get_layer('layer_norm_3')(x)
+        x = Activation('relu')(x)
+        x = Dropout(0.2)(x)
+        
+        x = self.predictor_model.get_layer('dense_4')(x)
+        x = Activation('relu')(x)
+        
+        dense_output = self.predictor_model.get_layer('dense_output')(x)
+        
+        output = Add(name='final_add')([dot_product, dense_output, anime_bias_vec])
+        output = Activation('sigmoid', name='output')(output)
+        
+        self.inf_model = Model(inputs=[user_vec, anime], outputs=output)
 
     def get_temp_user_embedding(self, embedding_size=32, min_rating=None, 
                                max_rating=None, epochs=100, lr=0.01):

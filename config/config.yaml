@@ -8,15 +8,19 @@ data_ingestion:
   threshold : 10
 
 model_training:
-  embedding_size: 32
-  loss: binary_crossentropy
+  embedding_size: 128
+  loss: mse
   learning_rate: 0.001
   metrics: ['mse','mae']
-  batch_size : 1024
+  batch_size : 512
   patience : 3
   verbose : 1
   force_training : True
   epochs : 10
+  min_anime_ratings: 10  
+  test_size: 0.1  
+  stratify_by_user: True 
+  random_state: 42
 
 suggestion:
   n : 20

@@ -8,3 +8,4 @@ joblib
 comet-ml
 dvc
 dvc-gs
+scikit-learn

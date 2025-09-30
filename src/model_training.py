@@ -2,14 +2,13 @@ import joblib
 import comet_ml
 import numpy as np
 import os
-from tensorflow.keras.callbacks import ModelCheckpoint,LearningRateScheduler,TensorBoard,EarlyStopping
+import tensorflow as tf
+from tensorflow.keras.callbacks import (ModelCheckpoint, LearningRateScheduler, EarlyStopping, ReduceLROnPlateau)
 from utils.common_functions import read_yaml
 from src.logger import get_logger
 from src.custom_exception import CustomException
 from src.base_model import BaseModel
 from config.paths_config import *
-
-
 
 logger = get_logger(__name__)
 
@@ -31,16 +30,15 @@ class ModelTrain:
         self.checkpoint_dir = checkpoint_dir
         self.checkpoint_file_name = checkpoint_file_name
         self.weights_dir = weights_dir
-        self.weights_file_names = weights_file_names  # Expected to be a dict like {'anime': 'filename', 'user': 'filename'}
+        self.weights_file_names = weights_file_names
         
         # Data arrays
         self.x_train_array_user, self.x_train_array_anime = [], []
         self.x_test_array_user, self.x_test_array_anime = [], []
         self.y_train_array, self.y_test_array = [], []
         
-        # Encoders and decoders
+        # Encoders
         self.anime2anime_encoder, self.user2user_encoder = {}, {}
-        self.anime2anime_decoder, self.user2user_decoder = {}, {}
         
         # Model and dataset info
         self.model = None
@@ -70,14 +68,57 @@ class ModelTrain:
             self.x_train_array_user, self.x_train_array_anime, self.y_train_array = train_array
             self.x_test_array_user, self.x_test_array_anime, self.y_test_array = test_array
 
-            logger.info('Data loaded and splitted successfully')
+            logger.info(f'Data loaded: {len(self.y_train_array)} train samples, {len(self.y_test_array)} test samples')
+            logger.info(f'Users: {self.n_user}, Animes: {self.n_anime}')
         except Exception as e:
-            logger.error('Error in Loading and splitting X-y data: ' + str(e))
-            raise CustomException('Error in Loading and splitting X-y data', e)
+            logger.error('Error in Loading data: ' + str(e))
+            raise CustomException('Error in Loading data', e)
+
+    def get_callbacks(self, checkpoint_filepath):
+        """Create improved callbacks for training"""
+        batch_size = self.config['model_training']['batch_size']
+        patience = self.config['model_training']['patience']
+        verbose = self.config['model_training']['verbose']
+        
+        callbacks = []
+        
+        # Model checkpoint - save best model
+        model_checkpoint = ModelCheckpoint(
+            filepath=checkpoint_filepath,
+            save_weights_only=True,
+            monitor='val_loss',
+            mode='min',
+            save_best_only=True,
+            verbose=verbose
+        )
+        callbacks.append(model_checkpoint)
+        
+        # Early stopping with min_delta
+        early_stopping = EarlyStopping(
+            patience=patience,
+            monitor='val_loss',
+            mode='min',
+            restore_best_weights=True,
+            min_delta=1e-5,  # Minimum change to qualify as improvement
+            verbose=verbose
+        )
+        callbacks.append(early_stopping)
+        
+        # Reduce learning rate on plateau
+        reduce_lr = ReduceLROnPlateau(
+            monitor='val_loss',
+            factor=0.5,  # Reduce LR by half
+            patience=max(3, patience // 2),  # Reduce patience before early stopping
+            min_lr=1e-7,
+            mode='min',
+            verbose=verbose
+        )
+        callbacks.append(reduce_lr)
+        
+        return callbacks
 
     def train_model(self, base_model):
         batch_size = self.config['model_training']['batch_size']
-        patience = self.config['model_training']['patience']
         verbose = self.config['model_training']['verbose']
         force_training = self.config['model_training']['force_training']
         epochs = self.config['model_training']['epochs']
@@ -95,80 +136,109 @@ class ModelTrain:
                 try:
                     self.model.load_weights(checkpoint_filepath)
                     required_training = False
-                    logger.info("Model loaded successfully")
+                    logger.info("Model loaded successfully from checkpoint")
+                    
+                    # Evaluate loaded model
+                    val_loss = self.model.evaluate(
+                        x=[self.x_test_array_user, self.x_test_array_anime],
+                        y=self.y_test_array,
+                        verbose=0
+                    )
+                    logger.info(f"Loaded model validation loss: {val_loss}")
                 except Exception as e:
                     logger.error("Could not load checkpoint: " + str(e))
             else:
-                logger.info("Could not find checkpoint")
+                logger.info("Checkpoint not found, training from scratch")
         
         if required_training:
-            model_checkpoint = ModelCheckpoint(
-                filepath=checkpoint_filepath,
-                save_weights_only=True,
-                monitor='val_loss',
-                mode='min',
-                save_best_only=True,
-                verbose=verbose
-            )
-            early_stopping = EarlyStopping(
-                patience=patience,
-                monitor='val_loss',
-                mode='min',
-                restore_best_weights=True
-            )
+            callbacks = self.get_callbacks(checkpoint_filepath)
 
+            # Log model architecture to Comet
+            self.experiment.set_model_graph(self.model)
+            
+            logger.info("Starting model training...")
             history = self.model.fit(
                 x=[self.x_train_array_user, self.x_train_array_anime],
                 y=self.y_train_array,
                 batch_size=batch_size,
                 epochs=epochs,
                 validation_data=([self.x_test_array_user, self.x_test_array_anime], self.y_test_array),
-                callbacks=[model_checkpoint, early_stopping]
+                callbacks=callbacks,
+                verbose=verbose
             )
             
+            # Log metrics to Comet
             for epoch in range(len(history.history['loss'])):
-                train_loss = {
-                    'train_loss': history.history['loss'][epoch],
-                    'train_mae_loss': history.history['mae'][epoch],
-                    'train_mse_loss': history.history['mse'][epoch]
-                }
-                val_loss = {
-                    'val_loss': history.history['val_loss'][epoch],
-                    'val_mae_loss': history.history['val_mae'][epoch],
-                    'val_mse_loss': history.history['val_mse'][epoch]
-                }
-
-                self.experiment.log_metrics(train_loss, step=epoch)
-                self.experiment.log_metrics(val_loss, step=epoch)
+                metrics_dict = {}
+                
+                # Training metrics
+                for key in history.history.keys():
+                    if not key.startswith('val_'):
+                        metrics_dict[f'train_{key}'] = history.history[key][epoch]
+                    else:
+                        metrics_dict[key] = history.history[key][epoch]
+                
+                self.experiment.log_metrics(metrics_dict, step=epoch)
+            
+            # Log final metrics
+            final_metrics = {
+                'final_train_loss': history.history['loss'][-1],
+                'final_val_loss': history.history['val_loss'][-1],
+                'best_val_loss': min(history.history['val_loss']),
+                'epochs_trained': len(history.history['loss'])
+            }
+            self.experiment.log_metrics(final_metrics)
+            
+            logger.info(f"Training completed. Best val_loss: {min(history.history['val_loss']):.4f}")
 
         return self.model
     
     def extract_weights(self, name):
+        """Extract and normalize embedding weights"""
         weight_layer = self.model.get_layer(name)
         weights = weight_layer.get_weights()[0]
-        weights = weights / (np.linalg.norm(weights, axis=1).reshape((-1, 1)) + 1e-8)
+        # L2 normalization for similarity computations
+        weights = weights / (np.linalg.norm(weights, axis=1, keepdims=True) + 1e-8)
         return weights
     
     def save_weights(self):
-        anime_weights = self.extract_weights('anime_embedding')
-        user_weights = self.extract_weights('user_embedding')
+        """Save embedding weights for inference"""
+        try:
+            anime_weights = self.extract_weights('anime_embedding')
+            user_weights = self.extract_weights('user_embedding')
 
-        os.makedirs(self.weights_dir, exist_ok=True)
-        anime_weights_filepath = os.path.join(self.weights_dir, self.weights_file_names['anime'])
-        user_weights_filepath = os.path.join(self.weights_dir, self.weights_file_names['user'])
+            os.makedirs(self.weights_dir, exist_ok=True)
+            anime_weights_filepath = os.path.join(self.weights_dir, self.weights_file_names['anime'])
+            user_weights_filepath = os.path.join(self.weights_dir, self.weights_file_names['user'])
 
-        joblib.dump(anime_weights, anime_weights_filepath)
-        joblib.dump(user_weights, user_weights_filepath)
+            joblib.dump(anime_weights, anime_weights_filepath)
+            joblib.dump(user_weights, user_weights_filepath)
 
-        self.experiment.log_asset(anime_weights_filepath)
-        self.experiment.log_asset(user_weights_filepath)
-        self.experiment.log_asset(os.path.join(self.checkpoint_dir, self.checkpoint_file_name))
+            # Log to Comet
+            self.experiment.log_asset(anime_weights_filepath)
+            self.experiment.log_asset(user_weights_filepath)
+            self.experiment.log_asset(os.path.join(self.checkpoint_dir, self.checkpoint_file_name))
+            
+            logger.info("Weights saved successfully")
+            logger.info(f"Anime weights shape: {anime_weights.shape}")
+            logger.info(f"User weights shape: {user_weights.shape}")
+        except Exception as e:
+            logger.error(f"Error saving weights: {str(e)}")
+            raise CustomException("Error saving weights", e)
     
     def execute(self):
-        self.load_data()
-        base_model = BaseModel(config_path=self.config_path)
-        self.train_model(base_model)
-        self.save_weights()
+        """Execute the complete training pipeline"""
+        try:
+            self.load_data()
+            base_model = BaseModel(config_path=self.config_path)
+            self.train_model(base_model)
+            self.save_weights()
+            self.experiment.end()
+            logger.info("Training pipeline completed successfully")
+        except Exception as e:
+            logger.error(f"Error in training pipeline: {str(e)}")
+            self.experiment.end()
+            raise
 
 
 if __name__ == "__main__":
@@ -186,5 +256,3 @@ if __name__ == "__main__":
         weights_file_names=WEIGHTS_FILE_NAME
     )
     model_train.execute()
-            
-            
