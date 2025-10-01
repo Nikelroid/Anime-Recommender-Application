@@ -9,3 +9,6 @@ comet-ml
 dvc
 dvc-gs
 scikit-learn
+fastapi
+uvicorn
+pydantic

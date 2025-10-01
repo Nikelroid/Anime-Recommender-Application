@@ -1,16 +1,9 @@
 from utils.common_functions import read_yaml
 from config.paths_config import *
-from src.suggestion import Suggestion
+from src.suggestion_model import Suggestion
 
 class Recommender:
     def __init__(self,user_ratings={},n=None):
-        #For Test!
-        user_ratings = {
-        'Attack on Titan': 9,
-        'Death Note': 8,
-        'One Piece': 1,
-        'Naruto': 6,
-        'Monster': 2}
         self.user_ratings = user_ratings
         self.num = n
         

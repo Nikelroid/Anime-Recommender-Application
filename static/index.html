@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Recommendation System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎌 Anime Recommendation System</h1>
+            <p class="subtitle">Rate your favorite animes and get personalized recommendations</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Rating Section -->
+            <section class="rating-section">
+                <h2>Rate Your Animes</h2>
+                <p class="instruction">Select between 5-20 animes and rate them (1-10)</p>
+                
+                <div class="search-container">
+                    <input type="text" id="animeSearch" placeholder="Search for an anime..." />
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+
+                <div id="selectedAnimes" class="selected-animes"></div>
+
+                <div class="recommendation-controls">
+                    <label for="recommendationCount">
+                        Number of recommendations: <span id="recCountValue">10</span>
+                    </label>
+                    <input type="range" id="recommendationCount" min="5" max="50" value="10" />
+                </div>
+
+                <button id="getRecommendations" class="btn-primary" disabled>
+                    Get Recommendations
+                </button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <h2>Your Recommendations</h2>
+                <div id="loadingSpinner" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Generating recommendations...</p>
+                </div>
+                <div id="recommendationResults"></div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        let availableAnimes = [];
+        let selectedAnimes = new Map(); // Map of anime name to rating
+
+        // Load anime list on page load
+        async function loadAnimes() {
+            try {
+                const response = await fetch('/api/animes');
+                availableAnimes = await response.json();
+                console.log(`Loaded ${availableAnimes.length} animes`);
+            } catch (error) {
+                console.error('Error loading animes:', error);
+                alert('Failed to load anime list. Please refresh the page.');
+            }
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('animeSearch');
+        const searchResults = document.getElementById('searchResults');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const filtered = availableAnimes
+                .filter(anime => anime.toLowerCase().includes(query))
+                .filter(anime => !selectedAnimes.has(anime))
+                .slice(0, 10);
+
+            if (filtered.length > 0) {
+                searchResults.innerHTML = filtered
+                    .map(anime => `<div class="search-result-item" data-anime="${anime}">${anime}</div>`)
+                    .join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // Handle anime selection
+        searchResults.addEventListener('click', (e) => {
+            if (e.target.classList.contains('search-result-item')) {
+                const animeName = e.target.dataset.anime;
+                
+                if (selectedAnimes.size >= 20) {
+                    alert('You can only select up to 20 animes!');
+                    return;
+                }
+
+                addSelectedAnime(animeName);
+                searchInput.value = '';
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // Add selected anime
+        function addSelectedAnime(animeName, rating = 5) {
+            selectedAnimes.set(animeName, rating);
+            renderSelectedAnimes();
+            updateButtonState();
+        }
+
+        // Render selected animes
+        function renderSelectedAnimes() {
+            const container = document.getElementById('selectedAnimes');
+            
+            if (selectedAnimes.size === 0) {
+                container.innerHTML = '<p class="empty-state">No animes selected yet. Search and select at least 5 animes.</p>';
+                return;
+            }
+
+            container.innerHTML = Array.from(selectedAnimes.entries())
+                .map(([anime, rating]) => `
+                    <div class="anime-rating-card">
+                        <div class="anime-info">
+                            <span class="anime-name">${anime}</span>
+                            <button class="btn-remove" onclick="removeAnime('${anime.replace(/'/g, "\\'")}')">✕</button>
+                        </div>
+                        <div class="rating-control">
+                            <label>Rating: <span class="rating-value">${rating}</span></label>
+                            <input type="range" min="1" max="10" value="${rating}" 
+                                   onchange="updateRating('${anime.replace(/'/g, "\\'")}', this.value)" />
+                        </div>
+                    </div>
+                `).join('');
+        }
+
+        // Update rating
+        function updateRating(animeName, rating) {
+            selectedAnimes.set(animeName, parseInt(rating));
+            renderSelectedAnimes();
+        }
+
+        // Remove anime
+        function removeAnime(animeName) {
+            selectedAnimes.delete(animeName);
+            renderSelectedAnimes();
+            updateButtonState();
+        }
+
+        // Update recommendation count display
+        const recCountSlider = document.getElementById('recommendationCount');
+        const recCountValue = document.getElementById('recCountValue');
+        recCountSlider.addEventListener('input', (e) => {
+            recCountValue.textContent = e.target.value;
+        });
+
+        // Update button state
+        function updateButtonState() {
+            const btn = document.getElementById('getRecommendations');
+            const count = selectedAnimes.size;
+            btn.disabled = count < 5 || count > 20;
+            btn.textContent = count < 5 
+                ? `Select at least ${5 - count} more anime(s)`
+                : 'Get Recommendations';
+        }
+
+        // Get recommendations
+        document.getElementById('getRecommendations').addEventListener('click', async () => {
+            const ratings = Array.from(selectedAnimes.entries()).map(([anime_name, rating]) => ({
+                anime_name,
+                rating
+            }));
+
+            const n = parseInt(recCountSlider.value);
+
+            // Show loading
+            document.getElementById('resultsSection').style.display = 'block';
+            document.getElementById('loadingSpinner').style.display = 'block';
+            document.getElementById('recommendationResults').innerHTML = '';
+
+            try {
+                const response = await fetch('/api/recommend', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ ratings, n })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to get recommendations');
+                }
+
+                const data = await response.json();
+                displayRecommendations(data.recommendations);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('recommendationResults').innerHTML = 
+                    '<div class="error">Failed to get recommendations. Please try again.</div>';
+            } finally {
+                document.getElementById('loadingSpinner').style.display = 'none';
+            }
+        });
+
+        // Display recommendations
+        function displayRecommendations(recommendations) {
+            const container = document.getElementById('recommendationResults');
+            
+            if (recommendations.length === 0) {
+                container.innerHTML = '<p class="empty-state">No recommendations found.</p>';
+                return;
+            }
+
+            container.innerHTML = recommendations.map((anime, index) => {
+                const synopsis = anime.synopsis || 'No synopsis available.';
+                const shortSynopsis = synopsis.length > 200 ? synopsis.substring(0, 200) + '...' : synopsis;
+                const needsToggle = synopsis.length > 200;
+                
+                return `
+                <div class="recommendation-card">
+                    <div class="card-header">
+                        <span class="rank">#${index + 1}</span>
+                        <h3>${anime.anime_name}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="genres"><strong>Genres:</strong> ${anime.genres}</p>
+                        <div class="synopsis-container">
+                            <p class="synopsis-text" id="synopsis-${index}">
+                                <strong>Synopsis:</strong> ${shortSynopsis}
+                            </p>
+                            ${needsToggle ? `
+                                <button class="btn-toggle-synopsis" onclick="toggleSynopsis(${index}, '${anime.synopsis.replace(/'/g, "\\'")}')">
+                                    Show More
+                                </button>
+                            ` : ''}
+                        </div>
+                        <div class="metrics">
+                            <div class="metric">
+                                <span class="metric-label">Match Score</span>
+                                <span class="metric-value">${anime.hybrid_score.toFixed(2)}</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Probability</span>
+                                <div class="probability-bar">
+                                    <div class="probability-fill" style="width: ${anime.probability * 100}%"></div>
+                                    <span class="probability-text">${(anime.probability * 100).toFixed(1)}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+
+            // Smooth scroll to results
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle synopsis display
+        function toggleSynopsis(index, fullSynopsis) {
+            const synopsisElement = document.getElementById(`synopsis-${index}`);
+            const button = event.target;
+            const isExpanded = button.textContent === 'Show Less';
+            
+            if (isExpanded) {
+                const shortSynopsis = fullSynopsis.length > 200 ? fullSynopsis.substring(0, 200) + '...' : fullSynopsis;
+                synopsisElement.innerHTML = `<strong>Synopsis:</strong> ${shortSynopsis}`;
+                button.textContent = 'Show More';
+            } else {
+                synopsisElement.innerHTML = `<strong>Synopsis:</strong> ${fullSynopsis}`;
+                button.textContent = 'Show Less';
+            }
+        }
+
+        // Click outside to close search results
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // Initialize
+        loadAnimes();
+        renderSelectedAnimes();
+    </script>
+</body>
+</html>

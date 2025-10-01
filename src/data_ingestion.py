@@ -51,7 +51,7 @@ class DataIngestion:
                             
                             if all_users_above_limit and has_user_below_threshold:
                                 logger.info('Same animelist_filtered.csv file exists, dont need to filter again, go to next file')
-                                continue  # Skip to next file
+                                continue  
                             else:
                                 logger.info("Existing filtered file doesn't meet criteria, will reprocess...")
                                 
@@ -62,14 +62,9 @@ class DataIngestion:
                         logger.info("Anime rating data filtering started")
                         data = pd.read_csv(file_path)
                         
-                        # First, clean the data (remove NaN and zero ratings)
                         data_cleaned = data.dropna(subset=['rating'])
                         data_cleaned = data_cleaned[data_cleaned['rating'] != 0]
-                        
-                        # Then, calculate rating counts from the cleaned data
                         n_rating = data_cleaned['user_id'].value_counts()
-                        
-                        # Finally, filter users who have at least row_limit ratings in the cleaned data
                         data_filtered = data_cleaned[data_cleaned['user_id'].isin(n_rating[n_rating >= self.row_limit].index)]
                         
                         logger.info(f"Original data: {len(data)} rows")
@@ -113,6 +108,9 @@ class DataIngestion:
             raise CustomException("Failed to download csv file", e)
         
     def execute(self):
+        logger.info('=' * 60)
+        logger.info('DATA INGESTION PIPELINE STARTED')
+        logger.info('=' * 60)
         try:
             logger.info("Started data ingestion data process")
             self.download_csv_from_gcp()
@@ -131,13 +129,12 @@ class DataIngestion:
 
 
 if __name__ == "__main__":
-    # Example usage with all parameters passed to constructor
     data_ingestion = DataIngestion(
         config_path=CONFIG_PATH,
         raw_dir=RAW_DIR,
-        bucket_name=None,  # Will use config value
-        file_names=None,   # Will use config value
-        row_limit=None,    # Will use config value
-        threshold=None     # Will use config value
+        bucket_name=None,  
+        file_names=None,   
+        row_limit=None,    
+        threshold=None    
     )
     data_ingestion.execute()

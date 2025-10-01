@@ -34,42 +34,30 @@ class DataProcessor:
 
         self.rating_df = None 
         self.anime_df = None
-
         self.rating_array_train, self.rating_array_test = None, None
-
         self.user2user_encoder, self.anime2anime_encoder = {}, {}
-
         os.makedirs(self.output_dir, exist_ok=True)
+        
         logger.info('DataProcessor initialized successfully')
 
     def load_data(self, usecols):
-        """
-        Load and filter data to remove cold-start problems
-        
-        Args:
-            usecols: Columns to load
-        """
         try:
             logger.info('Data loading started')
             self.rating_df = pd.read_csv(self.rating_dir, low_memory=True, usecols=usecols)
             initial_count = len(self.rating_df)
             logger.info(f'Initial data loaded: {initial_count:,} ratings')
             
-            # Remove duplicate ratings (keep the most recent one)
             self.rating_df = self.rating_df.drop_duplicates(
                 subset=['user_id', 'anime_id'], 
                 keep='last'
             )
             logger.info(f'After removing duplicates: {len(self.rating_df):,} ratings')
             
-            # Remove ratings with zero or negative values (invalid data)
             self.rating_df = self.rating_df[self.rating_df['rating'] > 0]
             logger.info(f'After removing invalid ratings: {len(self.rating_df):,} ratings')
             
-            # Get min_anime_ratings from config
             min_anime_ratings = self.config.get('data_processing', {}).get('min_anime_ratings', 0)
             
-            # Iterative filtering for anime cold-start problem
             if min_anime_ratings > 0:
                 logger.info(f'Starting iterative filtering for anime with min_anime_ratings={min_anime_ratings}...')
                 prev_count = 0
@@ -78,7 +66,6 @@ class DataProcessor:
                 while prev_count != len(self.rating_df) and iteration < 10:
                     prev_count = len(self.rating_df)
                     
-                    # Filter anime with too few ratings
                     anime_counts = self.rating_df['anime_id'].value_counts()
                     valid_anime = anime_counts[anime_counts >= min_anime_ratings].index
                     self.rating_df = self.rating_df[self.rating_df['anime_id'].isin(valid_anime)]
@@ -88,7 +75,6 @@ class DataProcessor:
                 
                 logger.info(f'Filtering completed after {iteration} iterations')
             
-            # Log statistics
             n_users = self.rating_df['user_id'].nunique()
             n_anime = self.rating_df['anime_id'].nunique()
             sparsity = 100 * (1 - len(self.rating_df) / (n_users * n_anime))
@@ -104,23 +90,13 @@ class DataProcessor:
             raise CustomException('Error in loading data', e)
         
     def scale_data(self):
-        """
-        Scale ratings to 0-1 range using min-max normalization
-        Also handles outliers better
-        """
         try:
             logger.info('Data scaling started')
-            
-            # Log original rating distribution
             logger.info(f'Original rating range: [{self.rating_df["rating"].min()}, {self.rating_df["rating"].max()}]')
             logger.info(f'Original rating mean: {self.rating_df["rating"].mean():.2f}')
             logger.info(f'Original rating std: {self.rating_df["rating"].std():.2f}')
-            
-            # Min-max scaling (assuming ratings are 1-10 scale typically)
             min_rating = self.rating_df['rating'].min()
             max_rating = self.rating_df['rating'].max()
-            
-            # Scale to [0, 1] range
             self.rating_df['rating'] = (
                 (self.rating_df['rating'] - min_rating) / (max_rating - min_rating)
             ).astype('float32')
@@ -134,46 +110,29 @@ class DataProcessor:
             raise CustomException('Error in scaling data', e)
 
     def create_encoder_decoder(self, key):
-        """Create encoder mapping for categorical IDs"""
         try:
             logger.info(f'Encoder creation started for: {key}')
             ids = self.rating_df[key].unique().tolist()
-            
-            # Sort IDs for consistent encoding
             ids.sort()
-            
             encoder = {x: i for i, x in enumerate(ids)}
             maps = self.rating_df[key].map(encoder)
-            
             logger.info(f'Encoder created for {key}: {len(encoder)} unique values')
             return encoder, maps
-            
         except Exception as e:
             logger.error(f'Error in creating encoder for {key}: ' + str(e))
             raise CustomException(f'Error in creating encoder for {key}', e)
 
     def encode_data(self):
-        """Create encoders for users and anime"""
         try:
             self.user2user_encoder, self.rating_df['user'] = self.create_encoder_decoder('user_id')
             self.anime2anime_encoder, self.rating_df['anime'] = self.create_encoder_decoder('anime_id')
-            
             logger.info('Encoders created successfully')
             logger.info(f'User count: {len(self.user2user_encoder)} | Anime count: {len(self.anime2anime_encoder)}')
-            
         except Exception as e:
             logger.error('Error in creating encoders: ' + str(e))
             raise CustomException('Error in creating encoders', e)
         
     def split_data(self, test_size=None, random_state=42, stratify_by_user=None):
-        """
-        Split data into train and test sets with better strategies
-        
-        Args:
-            test_size: Proportion or absolute number for test set (from config if None)
-            random_state: Random seed for reproducibility
-            stratify_by_user: If True, ensure each user has data in both sets (from config if None)
-        """
         try:
             logger.info('Data splitting started')
             
@@ -182,26 +141,18 @@ class DataProcessor:
                 test_size = self.config.get('data_processing', {}).get('test_size', 0.1)
             if stratify_by_user is None:
                 stratify_by_user = self.config.get('data_processing', {}).get('stratify_by_user', True)
-            
-            # Convert test_size to proportion if it's absolute number
             if test_size >= 1:
                 test_size = test_size / len(self.rating_df)
-            
             if stratify_by_user:
-                # Stratified split: ensure each user has data in both train and test
                 train_list, test_list = [], []
-                
                 for user_id in self.rating_df['user'].unique():
                     user_data = self.rating_df[self.rating_df['user'] == user_id]
-                    
                     if len(user_data) < 2:
-                        # If user has only 1 rating, put it in train
                         train_list.append(user_data)
                     else:
-                        # Split user's ratings
                         user_train, user_test = train_test_split(
                             user_data, 
-                            test_size=min(test_size, 0.5),  # Max 50% to test
+                            test_size=min(test_size, 0.5), 
                             random_state=random_state
                         )
                         train_list.append(user_train)
@@ -212,7 +163,6 @@ class DataProcessor:
                 
                 logger.info('Used stratified split by user')
             else:
-                # Simple random split
                 train_df, test_df = train_test_split(
                     self.rating_df,
                     test_size=test_size,
@@ -220,8 +170,6 @@ class DataProcessor:
                     shuffle=True
                 )
                 logger.info('Used random split')
-            
-            # Convert to arrays
             self.rating_array_train = [
                 train_df['user'].values,
                 train_df['anime'].values,
@@ -232,7 +180,6 @@ class DataProcessor:
                 test_df['anime'].values,
                 test_df['rating'].values
             ]
-            
             logger.info(f'Train size: {len(train_df):,} ({len(train_df)/len(self.rating_df)*100:.1f}%)')
             logger.info(f'Test size: {len(test_df):,} ({len(test_df)/len(self.rating_df)*100:.1f}%)')
             logger.info('Data split successfully')
@@ -242,50 +189,42 @@ class DataProcessor:
             raise CustomException('Error in splitting data', e)
     
     def load_merge_anime_df(self, df, syn_df=None):
-        """Load and merge anime metadata"""
         df = df.replace("Unknown", np.nan).rename(columns={
             "MAL_ID": "anime_id",
             "Name": "anime_name",
             "Score": "score",
             "Genres": "genres"
         })
-        
         if syn_df is not None:
             syn_df = syn_df.rename(columns={
                 "MAL_ID": "anime_id",
                 "sypnopsis": "syn"
             })
             df = df.merge(syn_df[["anime_id", "syn"]], on="anime_id", how="left")
-        
         return df
 
     def process_anime_data(self):
-        """Process anime metadata and filter to only anime in ratings"""
         try:
             logger.info('Anime data loading and processing started')
             anime_df = pd.read_csv(self.anime_dir)
             syn_df = pd.read_csv(self.synopsis_dir)
-            
-            self.anime_df = self.load_merge_anime_df(anime_df, syn_df)[
-                ['anime_id', 'anime_name', 'score', 'genres', 'syn']
-            ]
-            
-            # Filter to only anime that appear in ratings
+            merged_df = self.load_merge_anime_df(anime_df, syn_df)
+
+            mask = (merged_df["English name"] != "Unknown") & (merged_df["English name"].notna())
+            merged_df.loc[mask, "anime_name"] = (
+                merged_df.loc[mask, "anime_name"].astype(str) + " - " + merged_df.loc[mask, "English name"].astype(str)
+            )
+
+            self.anime_df = merged_df[['anime_id', 'anime_name', 'score', 'genres', 'syn']]
+
             valid_anime_ids = [k for k, v in self.anime2anime_encoder.items()]
             self.anime_df = self.anime_df[self.anime_df['anime_id'].isin(valid_anime_ids)]
-            
             logger.info(f'Filtered anime data: {len(self.anime_df)} anime with ratings')
-            
-            # Sort by score
             self.anime_df.sort_values(by=['score'], inplace=True, ascending=False, na_position='last')
-            
-            # Process genres
             self.anime_df['genres'] = self.anime_df['genres'].fillna('')
             self.anime_df['genre_list'] = self.anime_df['genres'].str.split(', ').apply(list)
-            
-            # Fill missing synopses
             self.anime_df['syn'] = self.anime_df['syn'].fillna('No synopsis available.')
-            
+                        
             logger.info('Anime data processed successfully')
 
         except Exception as e:
@@ -293,11 +232,9 @@ class DataProcessor:
             raise CustomException('Error in processing anime data', e)
             
     def save_artifacts(self):
-        """Save all processed data and encoders"""
         try:
-            logger.info(f'Saving artifacts to {self.output_dir}')
+            logger.info(f'Starting Saving artifacts to {self.output_dir}')
             
-            # Save encoders
             artifacts = { 
                 self.user_encoder_file: self.user2user_encoder,
                 self.anime_encoder_file: self.anime2anime_encoder
@@ -308,7 +245,6 @@ class DataProcessor:
                 joblib.dump(data, filepath)
                 logger.info(f'{name} saved ({len(data)} items)')
 
-            # Save train/test arrays
             joblib.dump(
                 self.rating_array_train, 
                 os.path.join(self.output_dir, self.rating_array_train_file)
@@ -319,13 +255,11 @@ class DataProcessor:
             )
             logger.info('Train and test arrays saved')
 
-            # Save anime dataframe
             self.anime_df.to_csv(
                 os.path.join(self.output_dir, self.anime_file_name), 
                 index=False
             )
             logger.info('Anime metadata saved')
-
             logger.info(f'All artifacts saved successfully to {self.output_dir}')
 
         except Exception as e:
@@ -333,9 +267,6 @@ class DataProcessor:
             raise CustomException('Error in saving data', e)
         
     def execute(self):
-        """
-        Execute the complete data processing pipeline using config parameters
-        """
         try:
             logger.info('=' * 60)
             logger.info('DATA PROCESSING PIPELINE STARTED')
@@ -372,5 +303,4 @@ if __name__ == "__main__":
         config_path=CONFIG_PATH
     )
     
-    # Execute using parameters from config file
     data_processor.execute()
