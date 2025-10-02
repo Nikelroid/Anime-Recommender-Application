@@ -41,7 +41,7 @@ pipeline {
                         dvc pull
                         
                         echo "Checking for model weights..."
-                        ls -lah checkpoints/
+                        ls -lah artifacts/models/
                         '''
                     }
                 }
@@ -56,9 +56,9 @@ pipeline {
                         export PATH=$PATH:${GCLOUD_PATH}
                         
                         # Verify weights exist before build
-                        if [ ! -f "checkpoints/best.weights.h5" ]; then
+                        if [ ! -f "artifacts/models/best.weights.h5" ]; then
                             echo "WARNING: Model weights not found!"
-                            ls -lah checkpoints/
+                            ls -lah artifacts/models/
                         fi
                         
                         gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
