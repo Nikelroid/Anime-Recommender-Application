@@ -83,7 +83,6 @@ async def get_recommendations(request: RecommendationRequest):
 if __name__ == "__main__":
     import uvicorn
     
-    # Create static directory if it doesn't exist
     os.makedirs("static", exist_ok=True)
     
     uvicorn.run(app, host="0.0.0.0", port=8000)
