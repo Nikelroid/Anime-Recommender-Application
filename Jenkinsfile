@@ -48,29 +48,34 @@ pipeline {
             }
         }
         stage('Build and push Image to gcr'){
-            steps{
-                withCredentials([file(credentialsId:'gcp-key',variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
-                    script{
-                        echo 'Building and pushing Image to gcr ...'
-                        sh '''
-                        export PATH=$PATH:${GCLOUD_PATH}
-                        
-                        # Verify weights exist before build
-                        if [ ! -f "artifacts/models/best_recommender_model.weights.h5" ]; then
-                            echo "WARNING: Model weights not found!"
-                            ls artifacts/models/
-                        fi
-                        
-                        gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
-                        gcloud config set project ${GCP_PROJECT}
-                        gcloud auth configure-docker --quiet
-                        docker build -t gcr.io/${GCP_PROJECT}/ml-project:latest .
-                        docker push gcr.io/${GCP_PROJECT}/ml-project:latest
-                        '''
-                    }
-                }
+    steps{
+        withCredentials([file(credentialsId:'gcp-key',variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
+            script{
+                echo 'Building and pushing Image to gcr ...'
+                sh '''
+                export PATH=$PATH:${GCLOUD_PATH}
+                
+                # Verify weights exist in Jenkins workspace
+                echo "=== Checking weights in Jenkins workspace ==="
+                ls -lah artifacts/models/
+                file artifacts/models/best_recommender_model.weights.h5
+                
+                gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
+                gcloud config set project ${GCP_PROJECT}
+                gcloud auth configure-docker --quiet
+                docker build -t gcr.io/${GCP_PROJECT}/ml-project:latest .
+                
+                # Check inside the built image
+                echo "=== Checking weights inside Docker image ==="
+                docker run --rm gcr.io/${GCP_PROJECT}/ml-project:latest ls -lah artifacts/models/
+                docker run --rm gcr.io/${GCP_PROJECT}/ml-project:latest test -f artifacts/models/best_recommender_model.weights.h5 && echo "✓ Weights exist in image" || echo "✗ Weights MISSING in image"
+                
+                docker push gcr.io/${GCP_PROJECT}/ml-project:latest
+                '''
             }
         }
+    }
+}
 
                 stage('Deploy to Kubernetes'){
             steps{
