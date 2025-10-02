@@ -240,7 +240,10 @@ class ModelTrain:
             self.train_model(base_model)
             self.save_weights()
             self.experiment.end()
-            logger.info("Training pipeline completed successfully")
+            logger.info('=' * 60)
+            logger.info("TRAINING PIPELINE COMPELTED SUCCESSFULLY")
+            logger.info('=' * 60)
+            
         except Exception as e:
             logger.error(f"Error in training pipeline: {str(e)}")
             self.experiment.end()
