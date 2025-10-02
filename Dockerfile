@@ -18,19 +18,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN echo "========== CHECKING COPIED FILES ==========" && \
-    ls -lah artifacts/models/ 2>/dev/null || echo "artifacts/models/ directory NOT FOUND" && \
-    if [ -f artifacts/models/best_recommender_model.weights.h5 ]; then \
-        echo "✓ Weights file EXISTS (size: $(du -h artifacts/models/best_recommender_model.weights.h5 | cut -f1))"; \
-    else \
-        echo "✗ Weights file MISSING"; \
-    fi && \
-    echo "==========================================="
-
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -e .
 
-RUN python pipeline/training_pipeline.py 2>&1 | tee training_log.txt && cat training_log.txt
+RUN python pipeline/training_pipeline.py
 
 EXPOSE 8000
 

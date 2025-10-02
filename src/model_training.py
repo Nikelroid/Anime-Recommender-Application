@@ -145,6 +145,7 @@ class ModelTrain:
                         logger.info(f"Loaded model validation loss: {val_loss}")
                     except Exception as e:
                         logger.error("Could not load checkpoint: " + str(e))
+                        raise Exception('Loading model failed,', e)
                 else:
                     logger.info("Checkpoint not found, training from scratch")
             
