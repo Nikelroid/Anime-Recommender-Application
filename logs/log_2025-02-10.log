@@ -1,0 +1,150 @@
+2025-10-02 05:09:33,191 - INFO - DataProcessor initializing started
+2025-10-02 05:09:33,193 - INFO - Successfully read the YAML file :D
+2025-10-02 05:09:33,193 - INFO - DataProcessor initialized successfully
+2025-10-02 05:09:33,193 - INFO - ============================================================
+2025-10-02 05:09:33,193 - INFO - DATA PROCESSING PIPELINE STARTED
+2025-10-02 05:09:33,193 - INFO - ============================================================
+2025-10-02 05:09:33,193 - INFO - Data loading started
+2025-10-02 05:09:33,672 - INFO - Initial data loaded: 3,105,743 ratings
+2025-10-02 05:09:33,918 - INFO - After removing duplicates: 3,105,743 ratings
+2025-10-02 05:09:33,932 - INFO - After removing invalid ratings: 3,105,743 ratings
+2025-10-02 05:09:33,955 - INFO - Final dataset: 3,105,743 ratings
+2025-10-02 05:09:33,955 - INFO - Users: 1,735 | Anime: 17,117
+2025-10-02 05:09:33,955 - INFO - Sparsity: 89.54%
+2025-10-02 05:09:33,955 - INFO - Avg ratings per user: 1790.1
+2025-10-02 05:09:33,955 - INFO - Avg ratings per anime: 181.4
+2025-10-02 05:09:33,955 - INFO - Data scaling started
+2025-10-02 05:09:33,961 - INFO - Original rating range: [1.0, 10.0]
+2025-10-02 05:09:33,963 - INFO - Original rating mean: 6.73
+2025-10-02 05:09:33,978 - INFO - Original rating std: 1.93
+2025-10-02 05:09:33,993 - INFO - Scaled rating range: [0.000, 1.000]
+2025-10-02 05:09:33,995 - INFO - Scaled rating mean: 0.637
+2025-10-02 05:09:33,995 - INFO - Data scaled successfully
+2025-10-02 05:09:33,995 - INFO - Encoder creation started for: user_id
+2025-10-02 05:09:34,016 - INFO - Encoder created for user_id: 1735 unique values
+2025-10-02 05:09:34,018 - INFO - Encoder creation started for: anime_id
+2025-10-02 05:09:34,076 - INFO - Encoder created for anime_id: 17117 unique values
+2025-10-02 05:09:34,078 - INFO - Encoders created successfully
+2025-10-02 05:09:34,078 - INFO - User count: 1735 | Anime count: 17117
+2025-10-02 05:09:34,078 - INFO - Data splitting started
+2025-10-02 05:09:37,916 - INFO - Used stratified split by user
+2025-10-02 05:09:37,917 - INFO - Train size: 2,794,388 (90.0%)
+2025-10-02 05:09:37,917 - INFO - Test size: 311,355 (10.0%)
+2025-10-02 05:09:37,917 - INFO - Data split successfully
+2025-10-02 05:09:37,947 - INFO - Anime data loading and processing started
+2025-10-02 05:09:38,144 - INFO - Filtered anime data: 17117 anime with ratings
+2025-10-02 05:09:38,158 - INFO - Anime data processed successfully
+2025-10-02 05:09:38,161 - INFO - Starting Saving artifacts to artifacts/processed
+2025-10-02 05:09:38,165 - INFO - user2user_encoder.pkl saved (1735 items)
+2025-10-02 05:09:38,191 - INFO - anime2anime_encoder.pkl saved (17117 items)
+2025-10-02 05:09:38,209 - INFO - Train and test arrays saved
+2025-10-02 05:09:38,315 - INFO - Anime metadata saved
+2025-10-02 05:09:38,315 - INFO - All artifacts saved successfully to artifacts/processed
+2025-10-02 05:09:38,315 - INFO - ============================================================
+2025-10-02 05:09:38,315 - INFO - DATA PROCESSING COMPLETED SUCCESSFULLY
+2025-10-02 05:09:38,315 - INFO - Output directory: artifacts/processed
+2025-10-02 05:09:38,315 - INFO - ============================================================
+2025-10-02 05:09:38,315 - INFO - Model Training initializing started ...
+2025-10-02 05:09:38,317 - INFO - Successfully read the YAML file :D
+2025-10-02 05:09:39,859 - INFO - CometML initialized
+2025-10-02 05:09:39,860 - INFO - ModelTrain class initialized
+2025-10-02 05:09:39,860 - INFO - Model Training Initialized successfully
+2025-10-02 05:09:39,860 - INFO - ============================================================
+2025-10-02 05:09:39,860 - INFO - MODEL TRAINING PIPELINE STARTED
+2025-10-02 05:09:39,860 - INFO - ============================================================
+2025-10-02 05:09:39,924 - INFO - Data loaded: 2794388 train samples, 311355 test samples
+2025-10-02 05:09:39,924 - INFO - Users: 1735, Animes: 17117
+2025-10-02 05:09:39,926 - INFO - Successfully read the YAML file :D
+2025-10-02 05:09:39,926 - INFO - Loaded configuration from config.yaml
+2025-10-02 05:09:39,926 - INFO - Training Model function started ...
+2025-10-02 05:09:39,926 - INFO - Initializing enhanced model
+2025-10-02 05:09:39,988 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-10-02 05:09:40,018 - INFO - Model loaded successfully from checkpoint
+2025-10-02 05:09:47,162 - INFO - Loaded model validation loss: [0.020853331312537193, 0.019086355343461037, 0.10260254144668579]
+2025-10-02 05:09:47,162 - INFO - Saving weights started ...
+2025-10-02 05:09:47,162 - INFO - Extracting weights started ...
+2025-10-02 05:09:47,164 - INFO - Weights extracted successfully
+2025-10-02 05:09:47,164 - INFO - Extracting weights started ...
+2025-10-02 05:09:47,164 - INFO - Weights extracted successfully
+2025-10-02 05:09:47,179 - INFO - Weights saved successfully
+2025-10-02 05:09:47,179 - INFO - Anime weights shape: (17117, 128)
+2025-10-02 05:09:47,179 - INFO - User weights shape: (1735, 128)
+2025-10-02 05:10:02,687 - INFO - ============================================================
+2025-10-02 05:10:02,688 - INFO - TRAINING PIPELINE COMPELTED SUCCESSFULLY
+2025-10-02 05:10:02,688 - INFO - ============================================================
+2025-10-02 05:19:05,850 - INFO - DataProcessor initializing started
+2025-10-02 05:19:05,852 - INFO - Successfully read the YAML file :D
+2025-10-02 05:19:05,852 - INFO - DataProcessor initialized successfully
+2025-10-02 05:19:05,852 - INFO - ============================================================
+2025-10-02 05:19:05,852 - INFO - DATA PROCESSING PIPELINE STARTED
+2025-10-02 05:19:05,852 - INFO - ============================================================
+2025-10-02 05:19:05,852 - INFO - Data loading started
+2025-10-02 05:19:06,272 - INFO - Initial data loaded: 3,105,743 ratings
+2025-10-02 05:19:06,476 - INFO - After removing duplicates: 3,105,743 ratings
+2025-10-02 05:19:06,489 - INFO - After removing invalid ratings: 3,105,743 ratings
+2025-10-02 05:19:06,513 - INFO - Final dataset: 3,105,743 ratings
+2025-10-02 05:19:06,513 - INFO - Users: 1,735 | Anime: 17,117
+2025-10-02 05:19:06,513 - INFO - Sparsity: 89.54%
+2025-10-02 05:19:06,513 - INFO - Avg ratings per user: 1790.1
+2025-10-02 05:19:06,513 - INFO - Avg ratings per anime: 181.4
+2025-10-02 05:19:06,513 - INFO - Data scaling started
+2025-10-02 05:19:06,519 - INFO - Original rating range: [1.0, 10.0]
+2025-10-02 05:19:06,521 - INFO - Original rating mean: 6.73
+2025-10-02 05:19:06,536 - INFO - Original rating std: 1.93
+2025-10-02 05:19:06,554 - INFO - Scaled rating range: [0.000, 1.000]
+2025-10-02 05:19:06,556 - INFO - Scaled rating mean: 0.637
+2025-10-02 05:19:06,556 - INFO - Data scaled successfully
+2025-10-02 05:19:06,556 - INFO - Encoder creation started for: user_id
+2025-10-02 05:19:06,576 - INFO - Encoder created for user_id: 1735 unique values
+2025-10-02 05:19:06,579 - INFO - Encoder creation started for: anime_id
+2025-10-02 05:19:06,637 - INFO - Encoder created for anime_id: 17117 unique values
+2025-10-02 05:19:06,639 - INFO - Encoders created successfully
+2025-10-02 05:19:06,639 - INFO - User count: 1735 | Anime count: 17117
+2025-10-02 05:19:06,639 - INFO - Data splitting started
+2025-10-02 05:19:10,672 - INFO - Used stratified split by user
+2025-10-02 05:19:10,673 - INFO - Train size: 2,794,388 (90.0%)
+2025-10-02 05:19:10,673 - INFO - Test size: 311,355 (10.0%)
+2025-10-02 05:19:10,673 - INFO - Data split successfully
+2025-10-02 05:19:10,703 - INFO - Anime data loading and processing started
+2025-10-02 05:19:10,902 - INFO - Filtered anime data: 17117 anime with ratings
+2025-10-02 05:19:10,917 - INFO - Anime data processed successfully
+2025-10-02 05:19:10,920 - INFO - Starting Saving artifacts to artifacts/processed
+2025-10-02 05:19:10,923 - INFO - user2user_encoder.pkl saved (1735 items)
+2025-10-02 05:19:10,949 - INFO - anime2anime_encoder.pkl saved (17117 items)
+2025-10-02 05:19:10,972 - INFO - Train and test arrays saved
+2025-10-02 05:19:11,081 - INFO - Anime metadata saved
+2025-10-02 05:19:11,081 - INFO - All artifacts saved successfully to artifacts/processed
+2025-10-02 05:19:11,081 - INFO - ============================================================
+2025-10-02 05:19:11,081 - INFO - DATA PROCESSING COMPLETED SUCCESSFULLY
+2025-10-02 05:19:11,081 - INFO - Output directory: artifacts/processed
+2025-10-02 05:19:11,081 - INFO - ============================================================
+2025-10-02 05:19:11,081 - INFO - Model Training initializing started ...
+2025-10-02 05:19:11,083 - INFO - Successfully read the YAML file :D
+2025-10-02 05:19:12,674 - INFO - CometML initialized
+2025-10-02 05:19:12,674 - INFO - ModelTrain class initialized
+2025-10-02 05:19:12,674 - INFO - Model Training Initialized successfully
+2025-10-02 05:19:12,674 - INFO - ============================================================
+2025-10-02 05:19:12,674 - INFO - MODEL TRAINING PIPELINE STARTED
+2025-10-02 05:19:12,674 - INFO - ============================================================
+2025-10-02 05:19:12,747 - INFO - Data loaded: 2794388 train samples, 311355 test samples
+2025-10-02 05:19:12,747 - INFO - Users: 1735, Animes: 17117
+2025-10-02 05:19:12,749 - INFO - Successfully read the YAML file :D
+2025-10-02 05:19:12,749 - INFO - Loaded configuration from config.yaml
+2025-10-02 05:19:12,749 - INFO - Training Model function started ...
+2025-10-02 05:19:12,749 - INFO - Initializing enhanced model
+2025-10-02 05:19:12,823 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-10-02 05:19:12,824 - INFO - Checkpoint not found, training from scratch
+2025-10-02 05:19:12,824 - INFO - Callbacks initialized successfully
+2025-10-02 05:19:12,828 - INFO - Starting model training...
+2025-10-02 05:26:57,368 - INFO - Training completed. Best val_loss: 0.0210
+2025-10-02 05:26:57,369 - INFO - Saving weights started ...
+2025-10-02 05:26:57,369 - INFO - Extracting weights started ...
+2025-10-02 05:26:57,371 - INFO - Weights extracted successfully
+2025-10-02 05:26:57,371 - INFO - Extracting weights started ...
+2025-10-02 05:26:57,371 - INFO - Weights extracted successfully
+2025-10-02 05:26:57,385 - INFO - Weights saved successfully
+2025-10-02 05:26:57,385 - INFO - Anime weights shape: (17117, 128)
+2025-10-02 05:26:57,385 - INFO - User weights shape: (1735, 128)
+2025-10-02 05:27:45,732 - INFO - ============================================================
+2025-10-02 05:27:45,734 - INFO - TRAINING PIPELINE COMPELTED SUCCESSFULLY
+2025-10-02 05:27:45,734 - INFO - ============================================================
