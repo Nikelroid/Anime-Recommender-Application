@@ -25,5 +25,5 @@ ANIME_ENCODER_FILE = "anime2anime_encoder.pkl"
 CHECKPOINT_DIR = "artifacts/models"
 WEIGHTS_DIR = "artifacts/weights"
 
-CHECKPOINT_FILE_NAME = 'best_recommender_model.weights.h5'
+CHECKPOINT_FILE_NAME = 'best_recommender_model.keras'
 WEIGHTS_FILE_NAME = {'anime':'anime_weights.pkl','user':'user_weights.pkl'}

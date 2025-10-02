@@ -9,6 +9,7 @@ from src.logger import get_logger
 from src.custom_exception import CustomException
 from src.base_model import BaseModel
 from config.paths_config import *
+from tensorflow import keras
 
 logger = get_logger(__name__)
 
@@ -81,7 +82,7 @@ class ModelTrain:
             
             model_checkpoint = ModelCheckpoint(
                 filepath=checkpoint_filepath,
-                save_weights_only=True,
+                save_weights_only=False,
                 monitor='val_loss',
                 mode='min',
                 save_best_only=True,
@@ -121,19 +122,17 @@ class ModelTrain:
             verbose = self.config['model_training']['verbose']
             force_training = self.config['model_training']['force_training']
             epochs = self.config['model_training']['epochs']
-            
-            os.makedirs(self.checkpoint_dir, exist_ok=True)
-            
-            self.model = base_model.RecommenderNet(self.n_user, self.n_anime)
 
-            checkpoint_filepath = os.path.join(self.checkpoint_dir, self.checkpoint_file_name)
+            os.makedirs(self.checkpoint_dir, exist_ok=True)
+
+            checkpoint_filepath = os.path.join(self.checkpoint_dir, 'best_recommender_model.keras')
 
             required_training = True
 
             if not force_training:
                 if os.path.exists(checkpoint_filepath):
                     try:
-                        self.model.load_weights(checkpoint_filepath)
+                        self.model = keras.models.load_model(checkpoint_filepath)
                         required_training = False
                         logger.info("Model loaded successfully from checkpoint")
                         
@@ -145,13 +144,20 @@ class ModelTrain:
                         logger.info(f"Loaded model validation loss: {val_loss}")
                     except Exception as e:
                         logger.error("Could not load checkpoint: " + str(e))
-                        raise Exception('Loading model failed ========> ', e)
+                        import traceback
+                        print("=" * 60)
+                        print("CHECKPOINT LOAD FAILED!")
+                        print(f"Error: {e}")
+                        print(traceback.format_exc())
+                        print("=" * 60)
                 else:
                     logger.info("Checkpoint not found, training from scratch")
-            
-            if required_training:
-                callbacks = self.get_callbacks(checkpoint_filepath)
 
+            if required_training:
+                self.model = base_model.RecommenderNet(self.n_user, self.n_anime)
+                
+                callbacks = self.get_callbacks(checkpoint_filepath=checkpoint_filepath)
+                
                 self.experiment.set_model_graph(self.model)
                 
                 logger.info("Starting model training...")

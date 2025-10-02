@@ -148,3 +148,243 @@
 2025-10-02 05:27:45,732 - INFO - ============================================================
 2025-10-02 05:27:45,734 - INFO - TRAINING PIPELINE COMPELTED SUCCESSFULLY
 2025-10-02 05:27:45,734 - INFO - ============================================================
+2025-10-02 06:00:59,089 - INFO - DataProcessor initializing started
+2025-10-02 06:00:59,090 - INFO - Successfully read the YAML file :D
+2025-10-02 06:00:59,091 - INFO - DataProcessor initialized successfully
+2025-10-02 06:00:59,091 - INFO - ============================================================
+2025-10-02 06:00:59,091 - INFO - DATA PROCESSING PIPELINE STARTED
+2025-10-02 06:00:59,091 - INFO - ============================================================
+2025-10-02 06:00:59,091 - INFO - Data loading started
+2025-10-02 06:00:59,548 - INFO - Initial data loaded: 3,105,743 ratings
+2025-10-02 06:00:59,779 - INFO - After removing duplicates: 3,105,743 ratings
+2025-10-02 06:00:59,796 - INFO - After removing invalid ratings: 3,105,743 ratings
+2025-10-02 06:00:59,819 - INFO - Final dataset: 3,105,743 ratings
+2025-10-02 06:00:59,820 - INFO - Users: 1,735 | Anime: 17,117
+2025-10-02 06:00:59,820 - INFO - Sparsity: 89.54%
+2025-10-02 06:00:59,820 - INFO - Avg ratings per user: 1790.1
+2025-10-02 06:00:59,820 - INFO - Avg ratings per anime: 181.4
+2025-10-02 06:00:59,820 - INFO - Data scaling started
+2025-10-02 06:00:59,825 - INFO - Original rating range: [1.0, 10.0]
+2025-10-02 06:00:59,828 - INFO - Original rating mean: 6.73
+2025-10-02 06:00:59,841 - INFO - Original rating std: 1.93
+2025-10-02 06:00:59,856 - INFO - Scaled rating range: [0.000, 1.000]
+2025-10-02 06:00:59,859 - INFO - Scaled rating mean: 0.637
+2025-10-02 06:00:59,859 - INFO - Data scaled successfully
+2025-10-02 06:00:59,859 - INFO - Encoder creation started for: user_id
+2025-10-02 06:00:59,880 - INFO - Encoder created for user_id: 1735 unique values
+2025-10-02 06:00:59,882 - INFO - Encoder creation started for: anime_id
+2025-10-02 06:00:59,940 - INFO - Encoder created for anime_id: 17117 unique values
+2025-10-02 06:00:59,943 - INFO - Encoders created successfully
+2025-10-02 06:00:59,943 - INFO - User count: 1735 | Anime count: 17117
+2025-10-02 06:00:59,943 - INFO - Data splitting started
+2025-10-02 06:01:03,978 - INFO - Used stratified split by user
+2025-10-02 06:01:03,979 - INFO - Train size: 2,794,388 (90.0%)
+2025-10-02 06:01:03,979 - INFO - Test size: 311,355 (10.0%)
+2025-10-02 06:01:03,979 - INFO - Data split successfully
+2025-10-02 06:01:04,012 - INFO - Anime data loading and processing started
+2025-10-02 06:01:04,234 - INFO - Filtered anime data: 17117 anime with ratings
+2025-10-02 06:01:04,251 - INFO - Anime data processed successfully
+2025-10-02 06:01:04,255 - INFO - Starting Saving artifacts to artifacts/processed
+2025-10-02 06:01:04,259 - INFO - user2user_encoder.pkl saved (1735 items)
+2025-10-02 06:01:04,286 - INFO - anime2anime_encoder.pkl saved (17117 items)
+2025-10-02 06:01:04,312 - INFO - Train and test arrays saved
+2025-10-02 06:01:04,437 - INFO - Anime metadata saved
+2025-10-02 06:01:04,438 - INFO - All artifacts saved successfully to artifacts/processed
+2025-10-02 06:01:04,438 - INFO - ============================================================
+2025-10-02 06:01:04,438 - INFO - DATA PROCESSING COMPLETED SUCCESSFULLY
+2025-10-02 06:01:04,438 - INFO - Output directory: artifacts/processed
+2025-10-02 06:01:04,438 - INFO - ============================================================
+2025-10-02 06:01:04,438 - INFO - Model Training initializing started ...
+2025-10-02 06:01:04,439 - INFO - Successfully read the YAML file :D
+2025-10-02 06:01:11,776 - INFO - DataProcessor initializing started
+2025-10-02 06:01:11,778 - INFO - Successfully read the YAML file :D
+2025-10-02 06:01:11,778 - INFO - DataProcessor initialized successfully
+2025-10-02 06:01:11,778 - INFO - ============================================================
+2025-10-02 06:01:11,778 - INFO - DATA PROCESSING PIPELINE STARTED
+2025-10-02 06:01:11,778 - INFO - ============================================================
+2025-10-02 06:01:11,778 - INFO - Data loading started
+2025-10-02 06:01:12,177 - INFO - Initial data loaded: 3,105,743 ratings
+2025-10-02 06:01:12,386 - INFO - After removing duplicates: 3,105,743 ratings
+2025-10-02 06:01:12,401 - INFO - After removing invalid ratings: 3,105,743 ratings
+2025-10-02 06:01:12,426 - INFO - Final dataset: 3,105,743 ratings
+2025-10-02 06:01:12,426 - INFO - Users: 1,735 | Anime: 17,117
+2025-10-02 06:01:12,426 - INFO - Sparsity: 89.54%
+2025-10-02 06:01:12,426 - INFO - Avg ratings per user: 1790.1
+2025-10-02 06:01:12,426 - INFO - Avg ratings per anime: 181.4
+2025-10-02 06:01:12,426 - INFO - Data scaling started
+2025-10-02 06:01:12,432 - INFO - Original rating range: [1.0, 10.0]
+2025-10-02 06:01:12,434 - INFO - Original rating mean: 6.73
+2025-10-02 06:01:12,448 - INFO - Original rating std: 1.93
+2025-10-02 06:01:12,464 - INFO - Scaled rating range: [0.000, 1.000]
+2025-10-02 06:01:12,466 - INFO - Scaled rating mean: 0.637
+2025-10-02 06:01:12,466 - INFO - Data scaled successfully
+2025-10-02 06:01:12,466 - INFO - Encoder creation started for: user_id
+2025-10-02 06:01:12,486 - INFO - Encoder created for user_id: 1735 unique values
+2025-10-02 06:01:12,488 - INFO - Encoder creation started for: anime_id
+2025-10-02 06:01:12,546 - INFO - Encoder created for anime_id: 17117 unique values
+2025-10-02 06:01:12,548 - INFO - Encoders created successfully
+2025-10-02 06:01:12,548 - INFO - User count: 1735 | Anime count: 17117
+2025-10-02 06:01:12,548 - INFO - Data splitting started
+2025-10-02 06:01:16,600 - INFO - Used stratified split by user
+2025-10-02 06:01:16,601 - INFO - Train size: 2,794,388 (90.0%)
+2025-10-02 06:01:16,601 - INFO - Test size: 311,355 (10.0%)
+2025-10-02 06:01:16,601 - INFO - Data split successfully
+2025-10-02 06:01:16,631 - INFO - Anime data loading and processing started
+2025-10-02 06:01:16,829 - INFO - Filtered anime data: 17117 anime with ratings
+2025-10-02 06:01:16,843 - INFO - Anime data processed successfully
+2025-10-02 06:01:16,847 - INFO - Starting Saving artifacts to artifacts/processed
+2025-10-02 06:01:16,850 - INFO - user2user_encoder.pkl saved (1735 items)
+2025-10-02 06:01:16,876 - INFO - anime2anime_encoder.pkl saved (17117 items)
+2025-10-02 06:01:16,896 - INFO - Train and test arrays saved
+2025-10-02 06:01:17,016 - INFO - Anime metadata saved
+2025-10-02 06:01:17,016 - INFO - All artifacts saved successfully to artifacts/processed
+2025-10-02 06:01:17,016 - INFO - ============================================================
+2025-10-02 06:01:17,016 - INFO - DATA PROCESSING COMPLETED SUCCESSFULLY
+2025-10-02 06:01:17,016 - INFO - Output directory: artifacts/processed
+2025-10-02 06:01:17,016 - INFO - ============================================================
+2025-10-02 06:01:17,016 - INFO - Model Training initializing started ...
+2025-10-02 06:01:17,017 - INFO - Successfully read the YAML file :D
+2025-10-02 06:01:18,559 - INFO - CometML initialized
+2025-10-02 06:01:18,559 - INFO - ModelTrain class initialized
+2025-10-02 06:01:18,560 - INFO - Model Training Initialized successfully
+2025-10-02 06:01:18,560 - INFO - ============================================================
+2025-10-02 06:01:18,560 - INFO - MODEL TRAINING PIPELINE STARTED
+2025-10-02 06:01:18,560 - INFO - ============================================================
+2025-10-02 06:01:18,649 - INFO - Data loaded: 2794388 train samples, 311355 test samples
+2025-10-02 06:01:18,649 - INFO - Users: 1735, Animes: 17117
+2025-10-02 06:01:18,651 - INFO - Successfully read the YAML file :D
+2025-10-02 06:01:18,651 - INFO - Loaded configuration from config.yaml
+2025-10-02 06:01:18,651 - INFO - Training Model function started ...
+2025-10-02 06:01:18,651 - INFO - Initializing enhanced model
+2025-10-02 06:01:18,732 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-10-02 06:01:18,767 - INFO - Model loaded successfully from checkpoint
+2025-10-02 06:01:25,967 - INFO - Loaded model validation loss: [0.021014032885432243, 0.01912647858262062, 0.10278348624706268]
+2025-10-02 06:01:25,967 - INFO - Saving weights started ...
+2025-10-02 06:01:25,967 - INFO - Extracting weights started ...
+2025-10-02 06:01:25,969 - INFO - Weights extracted successfully
+2025-10-02 06:01:25,969 - INFO - Extracting weights started ...
+2025-10-02 06:01:25,970 - INFO - Weights extracted successfully
+2025-10-02 06:01:25,984 - INFO - Weights saved successfully
+2025-10-02 06:01:25,985 - INFO - Anime weights shape: (17117, 128)
+2025-10-02 06:01:25,985 - INFO - User weights shape: (1735, 128)
+2025-10-02 06:01:38,466 - INFO - ============================================================
+2025-10-02 06:01:38,466 - INFO - TRAINING PIPELINE COMPELTED SUCCESSFULLY
+2025-10-02 06:01:38,466 - INFO - ============================================================
+2025-10-02 06:15:56,251 - INFO - Model Training initializing started ...
+2025-10-02 06:15:56,253 - INFO - Successfully read the YAML file :D
+2025-10-02 06:15:57,721 - INFO - CometML initialized
+2025-10-02 06:15:57,721 - INFO - ModelTrain class initialized
+2025-10-02 06:15:57,721 - INFO - Model Training Initialized successfully
+2025-10-02 06:15:57,721 - INFO - ============================================================
+2025-10-02 06:15:57,721 - INFO - MODEL TRAINING PIPELINE STARTED
+2025-10-02 06:15:57,721 - INFO - ============================================================
+2025-10-02 06:15:57,812 - INFO - Data loaded: 2794388 train samples, 311355 test samples
+2025-10-02 06:15:57,812 - INFO - Users: 1735, Animes: 17117
+2025-10-02 06:15:57,814 - INFO - Successfully read the YAML file :D
+2025-10-02 06:15:57,814 - INFO - Loaded configuration from config.yaml
+2025-10-02 06:15:57,814 - INFO - Training Model function started ...
+2025-10-02 06:15:57,814 - INFO - Checkpoint not found, training from scratch
+2025-10-02 06:15:57,814 - INFO - Initializing enhanced model
+2025-10-02 06:15:57,892 - INFO - Enhanced model initialized with 2,574,629 parameters
+2025-10-02 06:15:57,896 - INFO - Starting model training...
+2025-10-02 06:24:08,307 - INFO - Training completed. Best val_loss: 0.0207
+2025-10-02 06:24:08,307 - INFO - Saving weights started ...
+2025-10-02 06:24:08,307 - INFO - Extracting weights started ...
+2025-10-02 06:24:08,310 - INFO - Weights extracted successfully
+2025-10-02 06:24:08,310 - INFO - Extracting weights started ...
+2025-10-02 06:24:08,310 - INFO - Weights extracted successfully
+2025-10-02 06:24:08,326 - INFO - Weights saved successfully
+2025-10-02 06:24:08,326 - INFO - Anime weights shape: (17117, 128)
+2025-10-02 06:24:08,326 - INFO - User weights shape: (1735, 128)
+2025-10-02 06:24:55,706 - INFO - ============================================================
+2025-10-02 06:24:55,706 - INFO - TRAINING PIPELINE COMPELTED SUCCESSFULLY
+2025-10-02 06:24:55,707 - INFO - ============================================================
+2025-10-02 06:26:09,898 - INFO - Suggestion Model initilizing started
+2025-10-02 06:26:09,904 - INFO - Successfully read the YAML file :D
+2025-10-02 06:26:09,904 - INFO - Suggestion Model initilized successfully
+2025-10-02 06:26:09,904 - INFO - ============================================================
+2025-10-02 06:26:09,904 - INFO - RECOMMENDATION PIPELINE STARTED
+2025-10-02 06:26:09,904 - INFO - ============================================================
+2025-10-02 06:26:09,904 - INFO - data loading started
+2025-10-02 06:26:10,048 - INFO - Reforming rating_df started
+2025-10-02 06:26:10,208 - INFO - Rating_df reformd successfully
+2025-10-02 06:26:10,208 - INFO - Generating decoders started
+2025-10-02 06:26:10,209 - INFO - Decoders generated successfully
+2025-10-02 06:26:10,209 - INFO - Data loaded successfully
+2025-10-02 06:26:10,209 - INFO - Model is empty: Inference model initializing started
+2025-10-02 06:26:10,352 - INFO - Inference model initialized successfully
+2025-10-02 06:26:10,352 - INFO - Building profile for user with 5 ratings...
+2025-10-02 06:26:10,357 - INFO - Temp profile created successfully
+2025-10-02 06:26:15,360 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,363 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,387 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,387 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,389 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,391 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,393 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,416 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,416 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,418 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,419 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,421 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,444 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,444 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,446 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,447 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,449 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,472 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,472 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,473 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,474 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,476 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,499 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,499 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,501 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,501 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,503 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,526 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,526 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,528 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,528 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,530 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,553 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,554 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,555 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,556 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,558 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,581 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,581 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,582 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,583 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,585 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,607 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,607 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,609 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,610 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,612 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,635 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,635 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,636 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,637 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,639 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,662 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,662 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,664 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,665 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,667 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,690 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,690 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,691 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,692 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,694 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,717 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,717 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,718 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,719 - INFO - Finding similar animes for each anime...
+2025-10-02 06:26:15,721 - INFO - Starting final score calculation for each similar anime...
+2025-10-02 06:26:15,744 - INFO - Final scores calculated, listing them...
+2025-10-02 06:26:15,744 - INFO - Final scores found and sorted, creating similar anime df...
+2025-10-02 06:26:15,745 - INFO - Similar animes data frame created successfully
+2025-10-02 06:26:15,777 - INFO - Creating final result for 14 is starting
+2025-10-02 06:26:15,787 - INFO - Final result for 14 created
+2025-10-02 06:26:15,787 - INFO - Recommendation pipeline completed successfully

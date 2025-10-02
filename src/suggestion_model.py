@@ -9,6 +9,7 @@ from config.paths_config import *
 from utils.common_functions import read_yaml
 from utils.suggestion_functions import (getAnimeFrame, getAnimeSyn, generate_decoders, 
                                        create_rating_df, create_temp_user_profile, create_result_df)
+from tensorflow import keras
 from src.base_model import BaseModel
 from src.logger import get_logger
 from src.custom_exception import CustomException
@@ -84,12 +85,8 @@ class Suggestion:
             
             if self.predictor_model is None:
                 logger.info("Model is empty: Inference model initializing started")
-                base = BaseModel(config_path=self.config_path)
-                self.predictor_model = base.RecommenderNet(
-                    len(self.user2user_encoder), 
-                    len(self.anime2anime_encoder)
-                )
-                self.predictor_model.load_weights(self.checkpoint_route)
+                self.predictor_model = keras.models.load_model(self.checkpoint_route)
+
                 logger.info("Inference model initialized successfully")
             else:
                 logger.info("Model is already loaded, no need to re initialize")

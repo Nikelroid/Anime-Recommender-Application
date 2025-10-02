@@ -19,7 +19,7 @@ WORKDIR /app
 COPY . .
 
 RUN pip install --upgrade pip setuptools wheel
-RUN pip install --no-cache-dir -e .
+RUN pip install -e .
 
 RUN python pipeline/training_pipeline.py
 
