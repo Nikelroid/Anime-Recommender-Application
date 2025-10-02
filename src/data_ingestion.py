@@ -128,13 +128,3 @@ class DataIngestion:
             logger.info("Data ingestion completed!")
 
 
-if __name__ == "__main__":
-    data_ingestion = DataIngestion(
-        config_path=CONFIG_PATH,
-        raw_dir=RAW_DIR,
-        bucket_name=None,  
-        file_names=None,   
-        row_limit=None,    
-        threshold=None    
-    )
-    data_ingestion.execute()

@@ -21,6 +21,7 @@ COPY . .
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -e .
 
+RUN python pipeline/data_pipeline.py
 RUN python pipeline/training_pipeline.py
 
 EXPOSE 8000
