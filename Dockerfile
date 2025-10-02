@@ -18,7 +18,6 @@ WORKDIR /app
 
 COPY . .
 
-# Check what was copied
 RUN echo "========== CHECKING COPIED FILES ==========" && \
     ls -lah artifacts/models/ 2>/dev/null || echo "artifacts/models/ directory NOT FOUND" && \
     if [ -f artifacts/models/best_recommender_model.weights.h5 ]; then \
@@ -31,7 +30,7 @@ RUN echo "========== CHECKING COPIED FILES ==========" && \
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -e .
 
-RUN python pipeline/training_pipeline.py
+RUN python pipeline/training_pipeline.py 2>&1 | tee training_log.txt && cat training_log.txt
 
 EXPOSE 8000
 
