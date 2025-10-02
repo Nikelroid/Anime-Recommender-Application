@@ -144,6 +144,7 @@ class ModelTrain:
                         logger.info(f"Loaded model validation loss: {val_loss}")
                     except Exception as e:
                         logger.error("Could not load checkpoint: " + str(e))
+                        raise Exception('Error in loading model =======>,',e)
                         import traceback
                         print("=" * 60)
                         print("CHECKPOINT LOAD FAILED!")

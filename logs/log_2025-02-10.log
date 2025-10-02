@@ -388,3 +388,29 @@
 2025-10-02 06:26:15,777 - INFO - Creating final result for 14 is starting
 2025-10-02 06:26:15,787 - INFO - Final result for 14 created
 2025-10-02 06:26:15,787 - INFO - Recommendation pipeline completed successfully
+2025-10-02 06:30:58,040 - INFO - Model Training initializing started ...
+2025-10-02 06:30:58,042 - INFO - Successfully read the YAML file :D
+2025-10-02 06:30:59,751 - INFO - CometML initialized
+2025-10-02 06:30:59,752 - INFO - ModelTrain class initialized
+2025-10-02 06:30:59,752 - INFO - Model Training Initialized successfully
+2025-10-02 06:30:59,752 - INFO - ============================================================
+2025-10-02 06:30:59,752 - INFO - MODEL TRAINING PIPELINE STARTED
+2025-10-02 06:30:59,752 - INFO - ============================================================
+2025-10-02 06:30:59,842 - INFO - Data loaded: 2794388 train samples, 311355 test samples
+2025-10-02 06:30:59,842 - INFO - Users: 1735, Animes: 17117
+2025-10-02 06:30:59,844 - INFO - Successfully read the YAML file :D
+2025-10-02 06:30:59,844 - INFO - Loaded configuration from config.yaml
+2025-10-02 06:30:59,844 - INFO - Training Model function started ...
+2025-10-02 06:30:59,990 - INFO - Model loaded successfully from checkpoint
+2025-10-02 06:31:06,989 - INFO - Loaded model validation loss: [0.020739709958434105, 0.018952738493680954, 0.10207551717758179]
+2025-10-02 06:31:06,989 - INFO - Saving weights started ...
+2025-10-02 06:31:06,989 - INFO - Extracting weights started ...
+2025-10-02 06:31:06,991 - INFO - Weights extracted successfully
+2025-10-02 06:31:06,991 - INFO - Extracting weights started ...
+2025-10-02 06:31:06,991 - INFO - Weights extracted successfully
+2025-10-02 06:31:07,004 - INFO - Weights saved successfully
+2025-10-02 06:31:07,004 - INFO - Anime weights shape: (17117, 128)
+2025-10-02 06:31:07,004 - INFO - User weights shape: (1735, 128)
+2025-10-02 06:31:22,502 - INFO - ============================================================
+2025-10-02 06:31:22,502 - INFO - TRAINING PIPELINE COMPELTED SUCCESSFULLY
+2025-10-02 06:31:22,502 - INFO - ============================================================
