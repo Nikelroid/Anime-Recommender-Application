@@ -31,7 +31,7 @@ pipeline {
                 }
             }
         }
-                stage('DVC Pull'){
+        stage('DVC Pull'){
             steps{
                 withCredentials([file(credentialsId:'gcp-key',variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
                     script{
@@ -39,6 +39,9 @@ pipeline {
                         sh '''
                         . ${VENV_DIR}/bin/activate
                         dvc pull
+                        
+                        echo "Checking for model weights..."
+                        ls -lah checkpoints/
                         '''
                     }
                 }
@@ -51,6 +54,13 @@ pipeline {
                         echo 'Building and pushing Image to gcr ...'
                         sh '''
                         export PATH=$PATH:${GCLOUD_PATH}
+                        
+                        # Verify weights exist before build
+                        if [ ! -f "checkpoints/best.weights.h5" ]; then
+                            echo "WARNING: Model weights not found!"
+                            ls -lah checkpoints/
+                        fi
+                        
                         gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
                         gcloud config set project ${GCP_PROJECT}
                         gcloud auth configure-docker --quiet
