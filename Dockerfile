@@ -18,17 +18,18 @@ WORKDIR /app
 
 COPY . .
 
+# Check what was copied
+RUN echo "========== CHECKING COPIED FILES ==========" && \
+    ls -lah artifacts/models/ 2>/dev/null || echo "artifacts/models/ directory NOT FOUND" && \
+    if [ -f artifacts/models/best_recommender_model.weights.h5 ]; then \
+        echo "✓ Weights file EXISTS (size: $(du -h artifacts/models/best_recommender_model.weights.h5 | cut -f1))"; \
+    else \
+        echo "✗ Weights file MISSING"; \
+    fi && \
+    echo "==========================================="
+
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -e .
-
-# Debug: Check if weights exist before training
-RUN echo "========== DEBUG INFO ==========" && \
-    echo "Current directory:" && pwd && \
-    echo "Contents of artifacts/models/:" && \
-    ls -lah artifacts/models/ && \
-    echo "Checking if file exists:" && \
-    test -f artifacts/models/best_recommender_model.weights.h5 && echo "✓ File EXISTS" || echo "✗ File MISSING" && \
-    echo "================================"
 
 RUN python pipeline/training_pipeline.py
 

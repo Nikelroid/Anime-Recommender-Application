@@ -47,7 +47,7 @@ pipeline {
                 }
             }
         }
-        stage('Build and push Image to gcr'){
+stage('Build and push Image to gcr'){
     steps{
         withCredentials([file(credentialsId:'gcp-key',variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
             script{
@@ -58,7 +58,6 @@ pipeline {
                 # Verify weights exist in Jenkins workspace
                 echo "=== Checking weights in Jenkins workspace ==="
                 ls -lah artifacts/models/
-                file artifacts/models/best_recommender_model.weights.h5
                 
                 gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
                 gcloud config set project ${GCP_PROJECT}
@@ -67,8 +66,8 @@ pipeline {
                 
                 # Check inside the built image
                 echo "=== Checking weights inside Docker image ==="
-                docker run --rm gcr.io/${GCP_PROJECT}/ml-project:latest ls -lah artifacts/models/
-                docker run --rm gcr.io/${GCP_PROJECT}/ml-project:latest test -f artifacts/models/best_recommender_model.weights.h5 && echo "✓ Weights exist in image" || echo "✗ Weights MISSING in image"
+                docker run --rm gcr.io/${GCP_PROJECT}/ml-project:latest ls -lah artifacts/models/ || echo "Directory not found in image"
+                docker run --rm gcr.io/${GCP_PROJECT}/ml-project:latest sh -c "test -f artifacts/models/best_recommender_model.weights.h5 && echo '✓ Weights exist in image' || echo '✗ Weights MISSING in image'"
                 
                 docker push gcr.io/${GCP_PROJECT}/ml-project:latest
                 '''
