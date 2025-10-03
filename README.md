@@ -5,7 +5,7 @@ An end-to-end MLOps project implementing a deep learning-based anime recommendat
 ## Table of Contents
 - [Overview](#overview)
   - [Key Features](#key-features)
-- [User Interface & Usage Guide](#user-interface--usage-guide)
+- [Anime List Information](#anime-list--information)
   - [How to Use](#how-to-use)
   - [Screenshots](#screenshots)
   - [API Usage (Programmatic Access)](#api-usage-programmatic-access)
@@ -101,7 +101,7 @@ http://<EXTERNAL-IP>
 #### Main Interface
 ![Home Page](ui1.png)
 
-*Clean, minimalist interface for entering user ID and requesting recommendations*
+*Clean, minimalist interface for entering anime rating list and requesting recommendations*
 
 #### Recommendation Results
 ![Results Page](ui2.png)
@@ -123,26 +123,33 @@ POST /predict
 ```bash
 curl -X POST http://your-app-url/predict \
   -H "Content-Type: application/json" \
-  -d '{"user_id": 123}'
+  -d 'user_ratings = {
+    'Attack on Titan': 9,
+    'Death Note': 8,
+    'One Piece': 1,
+    'Naruto': 6,
+    'Monster': 2
+}'
 ```
 
 ### Response Format
 
 ```json
 {
-  "user_id": 123,
   "recommendations": [
     {
       "anime_id": 5114,
       "title": "Fullmetal Alchemist: Brotherhood",
       "predicted_rating": 9.2,
-      "genres": ["Action", "Adventure", "Drama"]
+      "genres": ["Action", "Adventure", "Drama"],
+      "syn": "This is a demo synopsis..."
     },
     {
       "anime_id": 1535,
       "title": "Death Note",
       "predicted_rating": 8.9,
-      "genres": ["Mystery", "Psychological", "Thriller"]
+      "genres": ["Mystery", "Psychological", "Thriller"],
+      "syn": "This is a demo synopsis..."
     }
   ],
   "status": "success"
@@ -153,8 +160,8 @@ curl -X POST http://your-app-url/predict \
 
 ```json
 {
-  "error": "User ID not found",
-  "status": "error"
+  "error": "Couldn't find a suitable recommended anime list with this list",
+  "status": "404"
 }
 ```
 
@@ -166,25 +173,22 @@ curl -X POST http://your-app-url/predict \
 - **Responsive Design**: Works on desktop and mobile devices
 - **RESTful API**: Easy integration with other applications
 
-## User ID Information
+## Anime List Information
 
-- User IDs correspond to users in the training dataset
-- Valid range: 1 to the maximum user ID in the system
-- If you're a new user not in the training data, the system will use collaborative filtering based on similar users
+- There is a search engine for anime search, which searches among more than 14k available anime
+- Anime name format: Each anime name is in (Real name - English name(If exists)) form
+- You can input at least two first letters of the anime name (Japanese or English name), and the engine searches for available anime 
 
 ## Troubleshooting
 
-**"User not found" error:**
-- Verify the user ID exists in the dataset
-- Check that the model has been trained with this user's data
 
 **Slow response time:**
-- First request may be slower due to model loading
+- First request may be slower due to the model initialization
 - Subsequent requests are cached and faster
 
 **No recommendations returned:**
-- The user may have an insufficient rating history
-- Try a different user ID with more viewing history
+- The user may have an insufficient rating list
+- Try a different set of anime ratings (You can select more anime)
 
 ## Privacy & Data
 
@@ -516,7 +520,12 @@ Set your Comet API key in `src/model_training.py`; you can easily sign up in [Co
 Example request:
 ```json
 {
-  "user_id": 123
+  user_ratings = {
+    'Attack on Titan': 9,
+    'Death Note': 8,
+    'One Piece': 1,
+    'Naruto': 6,
+    'Monster': 2
 }
 ```
 
