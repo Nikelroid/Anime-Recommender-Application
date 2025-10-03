@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment{
-        VENV_DIR = 'venv'
-        GCP_PROJECT = 'mlops-2-472323'
-        GCLOUD_PATH = '/var/jenkins_home/google-cloud-sdk/bin'
-        KUBECTL_AUTH_PLUGIN = '/usr/lib/google-cloud-sdk/bin'
+        VENV_DIR = 'YOUR_VENV_DIR'
+        GCP_PROJECT = 'YOUR_GCP_PROJECT_ID'
+        GCLOUD_PATH = 'YOUR_GCLOUD_PATH'
+        KUBECTL_AUTH_PLUGIN = 'YOUR_KUBERNETES_AUTH'
     }
 
     stages{
@@ -131,7 +131,7 @@ pipeline {
                         export PATH=$PATH:${GCLOUD_PATH}:${KUBECTL_AUTH_PLUGIN}
                         gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
                         gcloud config set project ${GCP_PROJECT}
-                        gcloud container clusters get-credentials ml-app-cluster --region us-west2
+                        gcloud container clusters get-credentials YOUR_KUBERNETER_CLUSTER_NAME --region YOUR_REGION
                         
                         kubectl apply -f deployment.yaml
                         

@@ -44,9 +44,9 @@ class ModelTrain:
         self.n_user = 0
         
         self.experiment = comet_ml.Experiment(
-            api_key='zoBjAHHF2mypXJQfqyw2RHmd9',
-            project_name='MLOps-2',
-            workspace='nikelroid'
+            api_key='YOURAPI_KEY',
+            project_name='YOURPROJECT',
+            workspace='YOUR_WORKSPACE'
         )
         
         logger.info("CometML initialized")
