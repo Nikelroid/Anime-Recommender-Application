@@ -17,6 +17,146 @@ This project builds a neural collaborative filtering model to predict anime rati
 - **Orchestration**: Kubernetes deployment on GKE
 - **Experiment Tracking**: Comet ML integration for model monitoring
 
+# User Interface & Usage Guide
+
+## Overview
+
+The Anime Recommender System provides a simple web interface for getting personalized anime recommendations based on your viewing history and preferences.
+
+## How to Use
+
+### 1. Access the Application
+
+**Local Development:**
+```
+http://localhost:8000
+```
+
+**Production Deployment:**
+```bash
+# Get the external IP from Kubernetes
+kubectl get services ml-app-service
+
+# Access via the EXTERNAL-IP shown
+http://<EXTERNAL-IP>
+```
+
+### 2. Get Recommendations
+
+1. **Enter Your Preferance**
+   - Search for your Anime that you have watched before.
+   - Rate it from 1 to 10, based on your personal opinion
+   - Select between 5 and 40 anime; more anime ratings will lead to a better answer.
+
+2. **Submit Request**
+   - Click the "Get Recommendations" button
+   - The system processes your request using the trained neural network
+
+3. **View Results**
+   - The page displays your personalized anime recommendations
+   - Each recommendation includes:
+     - Anime title
+     - Predicted rating (0-10 scale)
+     - Genre information
+     - Brief description or metadata
+
+### Screenshots
+
+#### Main Interface
+![Home Page](ui1.png)
+
+*Clean, minimalist interface for entering user ID and requesting recommendations*
+
+#### Recommendation Results
+![Results Page](ui2.png)
+
+*Personalized anime recommendations with predicted ratings and details*
+
+## API Usage (Programmatic Access)
+
+For developers or automated systems, use the REST API directly.
+
+### Endpoint
+
+```
+POST /predict
+```
+
+### Request Format
+
+```bash
+curl -X POST http://your-app-url/predict \
+  -H "Content-Type: application/json" \
+  -d '{"user_id": 123}'
+```
+
+### Response Format
+
+```json
+{
+  "user_id": 123,
+  "recommendations": [
+    {
+      "anime_id": 5114,
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "predicted_rating": 9.2,
+      "genres": ["Action", "Adventure", "Drama"]
+    },
+    {
+      "anime_id": 1535,
+      "title": "Death Note",
+      "predicted_rating": 8.9,
+      "genres": ["Mystery", "Psychological", "Thriller"]
+    }
+  ],
+  "status": "success"
+}
+```
+
+### Error Response
+
+```json
+{
+  "error": "User ID not found",
+  "status": "error"
+}
+```
+
+## Features
+
+- **Real-time Predictions**: Instant recommendation generation
+- **Personalized Results**: Based on your unique viewing patterns
+- **Top-N Recommendations**: Configurable number of suggestions
+- **Responsive Design**: Works on desktop and mobile devices
+- **RESTful API**: Easy integration with other applications
+
+## User ID Information
+
+- User IDs correspond to users in the training dataset
+- Valid range: 1 to the maximum user ID in the system
+- If you're a new user not in the training data, the system will use collaborative filtering based on similar users
+
+## Troubleshooting
+
+**"User not found" error:**
+- Verify the user ID exists in the dataset
+- Check that the model has been trained with this user's data
+
+**Slow response time:**
+- First request may be slower due to model loading
+- Subsequent requests are cached and faster
+
+**No recommendations returned:**
+- The user may have an insufficient rating history
+- Try a different user ID with more viewing history
+
+## Privacy & Data
+
+- No personal information is collected through the web interface
+- Only user IDs and anime preferences from the public dataset are used
+- All data is processed in-memory and not stored persistently
+
+
 ## Architecture
 
 ```
