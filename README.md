@@ -468,7 +468,7 @@ The project uses Comet ML for experiment tracking:
 Set your Comet API key in `src/model_training.py`; you can easily sign up in [Comet-ml](https://www.comet.com/), Then fill `YOURAPI_KEY`,
 `YOUR_PROJECT_NAME`, and `YOUR_WORKSPACE` with yours. It will provide a universal profile for your model monitoring.
 
-![Comel Control Panel](comet.png)
+![Comel Control Panel](cometml.png)
 
 *Clean, minimalist interface for your model and data monitoring*
 
