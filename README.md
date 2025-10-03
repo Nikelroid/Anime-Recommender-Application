@@ -2,6 +2,42 @@
 
 An end-to-end MLOps project implementing a deep learning-based anime recommendation system with automated CI/CD deployment to Google Kubernetes Engine.
 
+## Table of Contents
+- [Overview](#overview)
+  - [Key Features](#key-features)
+- [User Interface & Usage Guide](#user-interface--usage-guide)
+  - [How to Use](#how-to-use)
+  - [Screenshots](#screenshots)
+  - [API Usage (Programmatic Access)](#api-usage-programmatic-access)
+  - [Features](#features)
+  - [User ID Information](#user-id-information)
+  - [Troubleshooting](#troubleshooting)
+  - [Privacy & Data](#privacy--data)
+- [Architecture](#architecture)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Model Architecture](#model-architecture)
+- [Setup & Installation](#setup--installation)
+  - [Prerequisites](#prerequisites)
+  - [Local Development](#local-development)
+- [Data Versioning with DVC](#data-versioning-with-dvc)
+- [CI/CD Pipeline](#cicd-pipeline)
+  - [Jenkins Setup](#jenkins-setup)
+  - [Pipeline Stages](#pipeline-stages)
+- [Deployment to GKE](#deployment-to-gke)
+  - [Prerequisites](#prerequisites-1)
+  - [Manual Deployment](#manual-deployment)
+  - [Crucial Note](#crucial-note)
+  - [Kubernetes Configuration](#kubernetes-configuration)
+- [Configuration](#configuration)
+- [Monitoring](#monitoring)
+- [API Endpoints](#api-endpoints)
+- [Troubleshooting](#troubleshooting-1)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+  
 ## Overview
 
 This project builds a neural collaborative filtering model to predict anime ratings and provide hybrid personalized recommendations, based on both similar users and similar content. The system is containerized using Docker, versioned with DVC, and automatically deployed to GKE using Jenkins pipelines.
