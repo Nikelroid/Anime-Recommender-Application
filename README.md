@@ -520,7 +520,7 @@ Set your Comet API key in `src/model_training.py`; you can easily sign up in [Co
 Example request:
 ```json
 {
-  user_ratings = {
+  user_ratings : {
     'Attack on Titan': 9,
     'Death Note': 8,
     'One Piece': 1,
