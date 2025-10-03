@@ -518,7 +518,7 @@ Set your Comet API key in `src/model_training.py`; you can easily sign up in [Co
 **POST /predict** - Get anime recommendations for a user
 
 Example request:
-```json
+```bash
 {
   user_ratings : {
     'Attack on Titan': 9,
